@@ -1,0 +1,106 @@
+[
+  {
+    "tipoPel": "ORIGINAL",
+    "titulo": "pacif rim",
+    "genero": "accion",
+    "tipo": "pelicula",
+    "descripcion": "pelea de kaijus\t",
+    "anioPub": "2026-01-13",
+    "plataforma": "neflix",
+    "duracion": 135.0,
+    "loVi": true,
+    "puntuacion": 5.9,
+    "rewiew": ""
+  },
+  {
+    "temporadas": [
+      {
+        "numTemp": 1,
+        "capitulos": [
+          {
+            "numCap": 1,
+            "tituloCap": "upisde down",
+            "descripcionCap": "wachin desaparedce",
+            "visto": true,
+            "duracionCap": 24.5
+          },
+          {
+            "numCap": 2,
+            "tituloCap": "pan",
+            "descripcionCap": "sdj ",
+            "visto": true,
+            "duracionCap": 23.5
+          },
+          {
+            "numCap": 3,
+            "tituloCap": "apo",
+            "descripcionCap": "sad",
+            "visto": true,
+            "duracionCap": 48.9
+          }
+        ]
+      },
+      {
+        "numTemp": 2,
+        "capitulos": [
+          {
+            "numCap": 1,
+            "tituloCap": "man",
+            "descripcionCap": "pero",
+            "visto": true,
+            "duracionCap": 34.9
+          },
+          {
+            "numCap": 2,
+            "tituloCap": "paz",
+            "descripcionCap": "asdj",
+            "visto": false,
+            "duracionCap": 34.5
+          }
+        ]
+      },
+      {
+        "numTemp": 3,
+        "capitulos": [
+          {
+            "numCap": 1,
+            "tituloCap": "asd",
+            "descripcionCap": "asd",
+            "visto": false,
+            "duracionCap": 48.9
+          }
+        ]
+      }
+    ],
+    "totalCapitulos": 0,
+    "titulo": "Stranger Things",
+    "genero": "teshor",
+    "tipo": "serie",
+    "descripcion": "desaparicion\t",
+    "anioPub": "2026-01-10",
+    "plataforma": "neflut",
+    "duracion": 0.0,
+    "loVi": true,
+    "puntuacion": 8.9,
+    "rewiew": ""
+  },
+  {
+    "temporadas": [
+      {
+        "numTemp": 1,
+        "capitulos": []
+      }
+    ],
+    "totalCapitulos": 0,
+    "titulo": "la reina batata",
+    "genero": "asdsfa",
+    "tipo": "serie",
+    "descripcion": "asfaf",
+    "anioPub": "2026-01-27",
+    "plataforma": "nelfi",
+    "duracion": 0.0,
+    "loVi": true,
+    "puntuacion": 6.7,
+    "rewiew": ""
+  }
+]

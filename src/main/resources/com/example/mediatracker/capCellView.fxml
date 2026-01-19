@@ -1,0 +1,16 @@
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<HBox fx:id="root" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mediatracker.Controller.CapCellController"
+      spacing="10"
+      styleClass="capitulo-card" maxWidth="Infinity">
+
+    <Label fx:id="lblVisto" text="✔" />
+
+    <VBox spacing="2">
+        <Label fx:id="lblTitulo" />
+        <Label fx:id="lblInfo" styleClass="capitulo-info"/>
+    </VBox>
+
+</HBox>

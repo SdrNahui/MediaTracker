@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane style="-fx-background-color: #0A0F28;" xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mediatracker.Controller.MainController">
+
+    <center>
+        <StackPane fx:id="contenedor" />
+    </center>
+    <opaqueInsets>
+        <Insets />
+    </opaqueInsets>
+    <left>
+        <VBox fx:id="contenedorMenu" prefHeight="335.0" prefWidth="35.0" BorderPane.alignment="CENTER" />
+    </left>
+    <top>
+        <StackPane alignment="TOP_LEFT" style="-fx-background-color: #0A0A1A;" stylesheets="@nightwing.css"
+                   BorderPane.alignment="TOP_LEFT">
+            <children>
+                <ImageView fx:id="iconMenu" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@imagenes/menu.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </StackPane>
+    </top>
+    <right>
+        <VBox prefWidth="146.0" BorderPane.alignment="CENTER" />
+    </right>
+
+</BorderPane>

@@ -1,0 +1,29 @@
+package com.example.mediatracker.Controller;
+
+import com.example.mediatracker.Model.AudioVisual;
+import com.example.mediatracker.Model.Serie;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
+
+public class ListaCellController {
+    @FXML private HBox root;
+    @FXML private Label lblTitulo;
+    @FXML private Label lblInfo;
+    @FXML private Label lblDescripcion;
+    @FXML private Label lblTipo;
+
+    public void setData(AudioVisual av){
+        lblTitulo.setText(av.getTitulo());
+        lblInfo.setText(av.getGenero() + " • " + av.getPlataforma());
+        lblDescripcion.setText(av.getDescripcion());
+        lblTipo.setText(av instanceof Serie ? "serie" : "pelicula");
+    }
+    public void setSeleccionado(boolean seleccionado){
+        if(seleccionado){
+            root.getStyleClass().add("card-selected");
+        } else {
+            root.getStyleClass().remove("card-selected");
+        }
+    }
+}

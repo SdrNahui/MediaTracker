@@ -1,0 +1,142 @@
+.root{
+    -fx-background-color: #111b29;
+}
+
+/* ===== ScrollPane ===== */
+.scroll-pane {
+    -fx-background: #111b29;
+    -fx-background-color: #111b29;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: #111b29;
+}
+
+/* ===== Barra de scroll ===== */
+.scroll-bar {
+    -fx-background-color: #111b29;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #1E90FF; /* Azul Nightwing */
+    -fx-background-radius: 4;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #4fa3ff; /* Turquesa suave */
+}
+
+/* ===== Cards ===== */
+.card {
+    -fx-background-color: #0d2d63;
+    -fx-background-radius: 12;
+    -fx-padding: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: transparent;
+    -fx-border-width: 2;
+}
+
+.card:hover {
+    -fx-background-color: #15468f;
+}
+.card-selected {
+    -fx-border-color: #4DA6FF;
+    -fx-effect: dropshadow(gaussian, rgba(77,166,255,0.6),15,0.5,0,0);
+}
+
+.capitulo-card {
+    -fx-padding: 8;
+    -fx-background-color: #1e1e2f;
+    -fx-background-radius: 8;
+}
+.cap-visto {
+    -fx-text-fill: #4D46FF;
+    -fx-font-weight: bold;
+}
+.cap-no-visto {
+    -fx-text-fill: #666;
+}
+.capitulo-info {
+    -fx-text-fill: #888;
+    -fx-font-size: 11px;
+}
+.list-view {
+    -fx-background-color: #12121c;
+    -fx-control-inner-background: #12121c;
+    -fx-control-inner-background-alt: #12121c;
+}
+
+.list-cell:selected {
+    -fx-background-color: transparent;
+}
+.list-cell:selected .capitulo-card {
+    -fx-border-color: #4D46FF;
+    -fx-border-width: 1.5;
+    -fx-effect: dropshadow(gaussian,rgba(77,166,255,0.6), 12, 0.4, 0,0);
+}
+.list-cell {
+    -fx-padding: 6 10;
+    -fx-background-color: transparent;
+}
+.dark-list {
+    -fx-background-color: #12121c;
+}
+/*accordion */
+.accordion {
+    -fx-background-color: #0f172a;
+}
+.titled-pane {
+    -fx-background-color: #0f172a;
+    -fx-text-fill: #cbd5e1;
+}
+.titled-pane > .title {
+    -fx-background-color: #111827;
+    -fx-border-color: #1e293b;
+    -fx-border-width: 0 0 1 0;
+    -fx-font-weight: bold;
+}
+.titled-pane > .title > .text {
+    -fx-fill: #cbd5e1;
+}
+.titled-pane > *.content {
+    -fx-background-color: #0f172a;
+}
+.titled-pane > .title > .arrow-button > .arrow {
+    -fx-background-color: #4D46FF;
+}
+.titled-pane > .title:hover {
+    -fx-background-color: #1e293b;
+}
+.home-card {
+    -fx-background-color: #111827;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-cursor: hand;
+}
+.home-card:hover {
+    -fx-background-color: #1e293b;
+    -fx-effect: dropshadow(gaussian, rgba(77,166,255,0.5), 20, 0.4, 0, 0);
+}
+.card-title {
+    -fx-text-fill: #e5e7eb;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.card-sub {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+}
+.progress-bar {
+    -fx-accent: #4DA6FF;
+}
+
+.text-area {
+    -fx-text-fill: white;
+    -fx-prompt-text-fill: #3d5a80;
+}
+
+.text-area .content {
+    -fx-background-color: #1a1c20;
+    -fx-text-fill: white;
+}
+

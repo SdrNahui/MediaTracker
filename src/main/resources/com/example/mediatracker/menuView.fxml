@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane style="-fx-background-color: linear-gradient(to bottom, #05050A, #0D0D15);"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.mediatracker.Controller.MenuController">
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="25.0" style="-fx-background-color: #0A0A1A; -fx-padding: 15 0 0 0;">
+            <children>
+                <ImageView fx:id="iconHome" fitHeight="35.0" fitWidth="35.0" pickOnBounds="true"
+                           preserveRatio="true">
+                    <effect>
+                        <DropShadow color="#00AEEF" radius="0" spread="0" />
+                    </effect>
+                    <image>
+                        <Image url="@imagenes/home.png" />
+                    </image>
+                </ImageView>
+
+                <ImageView fx:id="iconAgregar" fitHeight="35.0" fitWidth="35.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <effect>
+                        <DropShadow color="#00AEEF" radius="0" spread="0" />
+                    </effect>
+                    <image>
+                        <Image url="@imagenes/agregar.png" />
+                    </image>
+                </ImageView>
+
+                <ImageView fx:id="iconBiblo" fitHeight="35.0" fitWidth="35.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <effect>
+                        <DropShadow color="#00AEEF" radius="0" spread="0" />
+                    </effect>
+                    <image>
+                        <Image url="@imagenes/estante.png" />
+                    </image>
+                </ImageView>
+
+                <ImageView fx:id="iconTotal" visible="false" managed="false"
+                           fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                    <effect>
+                        <DropShadow color="#00AEEF" radius="0" spread="0" />
+                    </effect>
+                    <image>
+                        <Image url="@imagenes/plata.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </VBox>
+
+        <VBox fx:id="menuTextos" layoutX="35.0" spacing="25.0"
+              style="-fx-background-color: #0A0F28; -fx-padding: 25 0 0 10;">
+            <children>
+                <Label fx:id="labelHome" style="-fx-font-weight: bold; -fx-letter-spacing: 2px;" text="HOME" textFill="#00AEEF">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="18.0" />
+                    </font>
+                </Label>
+
+                <Label fx:id="labelAgregar" style="-fx-font-weight: bold; -fx-letter-spacing: 2px;" text="AGREGAR" textFill="#00AEEF">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </Label>
+
+                <Label fx:id="labelBiblo" style="-fx-font-weight: bold; -fx-letter-spacing: 2px;" text="BIBLIOTECA" textFill="#00AEEF">
+                    <font>
+                        <Font name="Orbitron" size="18" />
+                    </font>
+                    <padding>
+                        <Insets top="10.0" />
+                    </padding>
+                </Label>
+
+                <Label fx:id="labelTotal" visible="false" managed="false" style="-fx-font-weight: bold; -fx-letter-spacing: 2px;" text="TOTAL" textFill="#00AEEF">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets top="5.0" />
+                    </padding>
+                </Label>
+
+            </children>
+        </VBox>
+
+    </children>
+
+</AnchorPane>

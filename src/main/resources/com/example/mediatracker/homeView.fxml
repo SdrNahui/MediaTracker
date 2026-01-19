@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fitToWidth="true"
+            style="-fx-background: #0A0F28;"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.mediatracker.Controller.HomeController">
+
+    <VBox spacing="25"
+          style="-fx-background-color: #0A0F28;">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20"/>
+        </padding>
+
+        <!-- HEADER -->
+        <VBox spacing="4">
+            <Label text="Inicio"
+                   style="-fx-text-fill: #E5E7EB; -fx-font-size: 28px; -fx-font-weight: bold;" />
+            <Label text="Resumen de tu actividad reciente"
+                   style="-fx-text-fill: #9CA3AF;" />
+        </VBox>
+
+        <!-- DASHBOARD PRINCIPAL -->
+        <GridPane hgap="25" vgap="20">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="65" />
+                <ColumnConstraints percentWidth="35" />
+            </columnConstraints>
+
+            <!-- EN CURSO -->
+            <VBox GridPane.columnIndex="0"
+                  spacing="10"
+                  style="-fx-background-color: #0F172A; -fx-padding: 15; -fx-background-radius: 12;">
+                <Label text="En curso"
+                       style="-fx-text-fill: #93C5FD; -fx-font-size: 18px; -fx-font-weight: bold;" />
+
+                <FlowPane fx:id="flowEnCurso"
+                          hgap="15"
+                          vgap="15"
+                          prefWrapLength="600" />
+            </VBox>
+
+            <!-- ACTIVIDAD RECIENTE -->
+            <VBox GridPane.columnIndex="1"
+                  spacing="10"
+                  style="-fx-background-color: #0F172A; -fx-padding: 15; -fx-background-radius: 12;">
+                <Label text="Actividad reciente"
+                       style="-fx-text-fill: #93C5FD; -fx-font-size: 18px; -fx-font-weight: bold;" />
+
+                <VBox fx:id="boxActividad" spacing="8" />
+            </VBox>
+        </GridPane>
+
+        <!-- STATS -->
+        <HBox spacing="20">
+            <VBox spacing="6"
+                  style="-fx-background-color: #111827; -fx-padding: 15; -fx-background-radius: 12;">
+                <Label text="Series"
+                       style="-fx-text-fill: #9CA3AF;" />
+                <Label fx:id="lblTotalSeries"
+                       style="-fx-text-fill: #E5E7EB; -fx-font-size: 22px; -fx-font-weight: bold;" />
+            </VBox>
+
+            <VBox spacing="6"
+                  style="-fx-background-color: #111827; -fx-padding: 15; -fx-background-radius: 12;">
+                <Label text="Capítulos vistos"
+                       style="-fx-text-fill: #9CA3AF;" />
+                <Label fx:id="lblCapsVistos"
+                       style="-fx-text-fill: #E5E7EB; -fx-font-size: 22px; -fx-font-weight: bold;" />
+            </VBox>
+        </HBox>
+
+        <!-- PELÍCULAS -->
+        <VBox spacing="10"
+              style="-fx-background-color: #0F172A; -fx-padding: 15; -fx-background-radius: 12;">
+            <Label text="Películas vistas"
+                   style="-fx-text-fill: #93C5FD; -fx-font-size: 18px; -fx-font-weight: bold;" />
+
+            <VBox fx:id="boxPeliculas" spacing="8" />
+        </VBox>
+
+    </VBox>
+</ScrollPane>
