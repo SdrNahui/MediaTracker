@@ -1,0 +1,2 @@
+# MediaTracker
+proyecto propio autodidacta 
