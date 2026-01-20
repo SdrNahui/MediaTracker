@@ -16,6 +16,7 @@ public class Pelicula extends AudioVisual {
         } */
         this.tipoPel = tipoPel;
         this.tipo = "pelicula";
+        this.imgPath = null;
     }
     public TipoPelicula getTipoPel(){
         return tipoPel;

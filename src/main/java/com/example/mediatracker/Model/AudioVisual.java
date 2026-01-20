@@ -14,7 +14,7 @@ public abstract class AudioVisual {
     private double puntuacion;
     private String rewiew;
     private LocalDate agregado;
-
+    protected String imgPath;
     public AudioVisual(){
 
     }
@@ -87,6 +87,9 @@ public abstract class AudioVisual {
         }
         return rewiew;
     }
+    public String getImgPath(){
+        return imgPath;
+    }
 
     public LocalDate getAgregado() {
         return agregado;
@@ -126,6 +129,10 @@ public abstract class AudioVisual {
 
     public void setRewiew(String rewiew) {
         this.rewiew = rewiew;
+    }
+
+    public void setImgPath(String imgPath) {
+        this.imgPath = imgPath;
     }
 
     @Override

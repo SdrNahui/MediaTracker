@@ -139,4 +139,8 @@
     -fx-background-color: #1a1c20;
     -fx-text-fill: white;
 }
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.3, 0, 4);
+}
+
 

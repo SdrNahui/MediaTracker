@@ -6,11 +6,14 @@ import com.example.mediatracker.Model.AudioVisual;
 import com.example.mediatracker.Model.Serie;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.FileChooser;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
-public class AgregarController implements ISetService, ISetMain {
+public class  AgregarController implements ISetService, ISetMain {
 
     @FXML TextField txtTitulo;
     @FXML TextField txtGenero;
@@ -26,9 +29,16 @@ public class AgregarController implements ISetService, ISetMain {
     @FXML ComboBox<String> cmbTipoPel;
     private IService service;
     private MainController main;
+    private MediaImgService imgService;
+    private File imgSeleccionada;
     @Override
     public void setService(IService service) {
         this.service = service;
+        try {
+            this.imgService = new MediaImgService();
+        } catch (IOException e){
+            throw new RuntimeException(e);
+        }
         if (service.getModoFormulario() == ModoFormulario.EDITAR) {
             cargarDatos(service.getSeleccionado());
         }
@@ -55,6 +65,7 @@ public class AgregarController implements ISetService, ISetMain {
         double puntuacion;
         String rewiew = txtRewiew.getText();
         String tipo = cmbTipo.getValue();
+        String imgPath = null;
         if(tipo == null || tipo.isBlank()){
             tintarMsj("Seleccione un tipo", TipoMsj.ERROR);
             return;
@@ -67,6 +78,16 @@ public class AgregarController implements ISetService, ISetMain {
                 return;
             }
         }
+        if(imgSeleccionada != null){
+            try {
+                String viejo = service.getModoFormulario() == ModoFormulario.EDITAR
+                        ? service.getSeleccionado().getImgPath() : null;
+                imgPath = imgService.guardarImg(imgSeleccionada,viejo);
+            } catch (IOException e) {
+                tintarMsj("Error al guardar la imagen.", TipoMsj.ERROR);
+                return;
+            }
+        }
         try{
             anioPub = txtAnioPub.getValue();
             if(tipo.trim().toLowerCase().equals("pelicula")){
@@ -75,10 +96,10 @@ public class AgregarController implements ISetService, ISetMain {
             puntuacion = Double.parseDouble(txtPuntuacion.getText());
             if(service.getModoFormulario() == ModoFormulario.EDITAR) {
                 res = service.editar(service.getSeleccionado(),titulo, genero, descripcion, anioPub, plataforma,
-                        duracion, loVi, puntuacion, rewiew, tipo, tipoPel);
+                        duracion, loVi, puntuacion, rewiew, tipo, tipoPel, imgPath);
             } else {
                 res = service.agregar(titulo, genero, descripcion, anioPub, plataforma,duracion, loVi, puntuacion,
-                        rewiew, tipo, tipoPel);
+                        rewiew, tipo, tipoPel, imgPath);
             }
             if(!res.isOk()){
                 tintarMsj(res.getMsj(), TipoMsj.ERROR);
@@ -142,6 +163,16 @@ public class AgregarController implements ISetService, ISetMain {
         actualizarCamposPorTipo(tipo);
         if(a1 instanceof Pelicula pelicula){
             cmbTipoPel.setValue(String.valueOf(pelicula.getTipoPel()));
+        }
+    }
+    @FXML private void seleccionarImg(){
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Seleccione una imagen");
+        chooser.getExtensionFilters()
+                .add(new FileChooser.ExtensionFilter("Imagenes", "*.png", "*.jpg", "*.jpeg"));
+        File file = chooser.showOpenDialog(txtTitulo.getScene().getWindow());
+        if(file != null){
+            imgSeleccionada = file;
         }
     }
 }

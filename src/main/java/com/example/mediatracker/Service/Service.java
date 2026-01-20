@@ -41,7 +41,7 @@ public class Service implements IService {
     @Override
     public ResultadoValidacion agregar(String titulo, String genero,String descripcion, LocalDate anioPub,
                                        String plataforma, double duracion, boolean loVi, double puntuacion,
-                                       String rewiew, String tipo, String tipoPel) {
+                                       String rewiew, String tipo, String tipoPel, String imgPath) {
         if(titulo == null || tipo.isBlank()){
             setMensaje("El titulo no puede estar vacio.");
             return new ResultadoValidacion(false, getMensaje());
@@ -120,7 +120,8 @@ public class Service implements IService {
     @Override
     public ResultadoValidacion editar(AudioVisual audioVisual,String titulo, String genero, String descripcion,
                                       LocalDate anioPub, String plataforma, double duracion, boolean loVi,
-                                      double puntuacion, String rewiew, String tipo, String tipoPelStr) {
+                                      double puntuacion, String rewiew, String tipo,
+                                      String tipoPelStr, String imgPath) {
         if(audioVisual == null){
             return new ResultadoValidacion(false, "No hay elemento seleccionado");
         }
@@ -133,6 +134,9 @@ public class Service implements IService {
         audioVisual.setLoVi(loVi);
         audioVisual.setPuntuacion(puntuacion);
         audioVisual.setRewiew(rewiew);
+        if(imgPath != null){
+            audioVisual.setImgPath(imgPath);
+        }
         if(audioVisual instanceof Pelicula){
             TipoPelicula tipoPel = TipoPelicula.convertirStr(tipoPelStr);
             ((Pelicula) audioVisual).setTipoPel(tipoPel);

@@ -65,6 +65,7 @@
     <TextArea fx:id="txtRewiew" prefWidth="150" promptText="Rewiew" style="-fx-background-color: #1a1c20;
     -fx-text-fill: white; -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF;"
               stylesheets="@nightwing.css" />
+    <Button text="Agregar Imagen" onAction="#seleccionarImg"/>
     <Button text="Guardar" onAction="#guardar"  />
     <Label fx:id="lblMensaje" text=" " style="-fx-text-fill: #1E90FF; -fx-font-size: 14px;" />
 

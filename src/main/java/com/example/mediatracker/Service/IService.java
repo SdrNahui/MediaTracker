@@ -11,10 +11,10 @@ public interface IService {
     //AUDIOVISUAL
     public ResultadoValidacion agregar(String titulo, String genero, String descripcion, LocalDate anioPub,
                                        String plataforma, double duracion, boolean loVi, double puntuacion,
-                                       String rewiew, String tipo, String tipoPel);
+                                       String rewiew, String tipo, String tipoPel, String imgPath);
     public ResultadoValidacion editar(AudioVisual audioVisual, String titulo, String genero, String descripcion, LocalDate anioPub,
                                       String plataforma, double duracion, boolean loVi, double puntuacion,
-                                      String rewiew, String tipo, String tipoPel);
+                                      String rewiew, String tipo, String tipoPel, String imgPath);
     public void eliminar(AudioVisual audioVisualSelec);
     public void seleccionado(AudioVisual audioVisual);
     public boolean estaSeleccionado();

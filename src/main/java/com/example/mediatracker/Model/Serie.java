@@ -16,6 +16,7 @@ public class Serie extends AudioVisual {
         this.temporadas = new ArrayList<>();
         this.totalCapitulos = 0;
         this.tipo = "serie";
+        this.imgPath = null;
 
     }
 

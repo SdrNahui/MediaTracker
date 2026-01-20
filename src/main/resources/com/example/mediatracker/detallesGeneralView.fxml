@@ -9,6 +9,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.geometry.Insets?>
+
 <BorderPane
         xmlns="http://javafx.com/javafx"
         xmlns:fx="http://javafx.com/fxml"
@@ -34,69 +35,78 @@
         </VBox>
     </left>
 
-    <!-- CONTENIDO -->
+    <!-- CONTENIDO PRINCIPAL -->
     <center>
-        <!-- TU VBox ACTUAL (no lo repito) -->
-        <VBox spacing="20"
-              alignment="TOP_CENTER"
-              style="-fx-padding: 30;">
+        <HBox spacing="40" style="-fx-padding: 30;" alignment="TOP_LEFT">
 
-            <!-- HEADER -->
-            <VBox spacing="6" alignment="CENTER">
-                <Label fx:id="lblTitulo"
-                       style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1E90FF;" />
-
-                <Label fx:id="lblMeta"
-                       style="-fx-text-fill: #9db4d6; -fx-font-size: 14px;" />
+            <!-- POSTER -->
+            <VBox alignment="TOP_CENTER">
+                <ImageView fx:id="imgPoster"
+                           fitWidth="180"
+                           preserveRatio="true"
+                           smooth="true"
+                           style="-fx-effect: dropshadow(gaussian, black, 20, 0.3, 0, 0);" />
             </VBox>
 
-            <!-- ACCIONES / STATS -->
-            <HBox spacing="25" alignment="CENTER">
-                <Label fx:id="lblLoVi"
-                       style="-fx-text-fill: #6fb0ff; -fx-font-size: 15px;" />
+            <!-- INFO -->
+            <VBox spacing="18" maxWidth="650" prefWidth="650">
 
-                <Label fx:id="lblPuntuacion"
-                       style="-fx-text-fill: gold; -fx-font-size: 15px;" />
+                <!-- HEADER -->
+                <VBox spacing="6">
+                    <Label fx:id="lblTitulo"
+                           style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1E90FF;" />
 
-                <Label fx:id="lblDuracion"
-                       style="-fx-text-fill: #cbd5e1; -fx-font-size: 15px;" />
-            </HBox>
+                    <Label fx:id="lblMeta"
+                           style="-fx-text-fill: #9db4d6; -fx-font-size: 14px;" />
+                </VBox>
 
-            <Separator />
+                <!-- STATS -->
+                <HBox spacing="25">
+                    <Label fx:id="lblLoVi"
+                           style="-fx-text-fill: #6fb0ff; -fx-font-size: 15px;" />
 
-            <!-- DESCRIPCIÓN -->
-            <VBox spacing="6" maxWidth="650">
-                <Label text="Descripción"
-                       style="-fx-text-fill: #6fb0ff; -fx-font-size: 16px;" />
+                    <Label fx:id="lblPuntuacion"
+                           style="-fx-text-fill: gold; -fx-font-size: 15px;" />
 
-                <Label fx:id="lblDescripcion"
-                       wrapText="true"
-                       style="-fx-text-fill: white; -fx-font-size: 14px;" />
-            </VBox>
-
-            <!-- BLOQUE SERIE -->
-            <VBox fx:id="boxSerie"
-                  spacing="12"
-                  maxWidth="650"
-                  visible="false"
-                  managed="false">
+                    <Label fx:id="lblDuracion"
+                           style="-fx-text-fill: #cbd5e1; -fx-font-size: 15px;" />
+                </HBox>
 
                 <Separator />
 
-                <HBox alignment="CENTER_LEFT">
-                    <Label text="Temporadas"
-                           style="-fx-text-fill: #1E90FF; -fx-font-size: 18px;" />
-                    <Region HBox.hgrow="ALWAYS"/>
-                    <Button text="Agregar temporada"
-                            onAction="#agregarTemp"/>
-                </HBox>
+                <!-- DESCRIPCIÓN -->
+                <VBox spacing="6">
+                    <Label text="Descripción"
+                           style="-fx-text-fill: #6fb0ff; -fx-font-size: 16px;" />
 
-                <Accordion fx:id="accordionTemp"/>
+                    <Label fx:id="lblDescripcion"
+                           wrapText="true"
+                           style="-fx-text-fill: white; -fx-font-size: 14px;" />
+                </VBox>
+
+                <!-- BLOQUE SERIE -->
+                <VBox fx:id="boxSerie"
+                      spacing="12"
+                      visible="false"
+                      managed="false">
+
+                    <Separator />
+
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="Temporadas"
+                               style="-fx-text-fill: #1E90FF; -fx-font-size: 18px;" />
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Button text="Agregar temporada"
+                                onAction="#agregarTemp"/>
+                    </HBox>
+
+                    <Accordion fx:id="accordionTemp"/>
+                </VBox>
+
+                <!-- REVIEW -->
+                <Label fx:id="lblRewiew"
+                       style="-fx-text-fill: #6fb0ff; -fx-font-size: 15px;" />
             </VBox>
-
-            <Label fx:id="lblRewiew"
-                   style="-fx-text-fill: #6fb0ff; -fx-font-size: 15px;" />
-        </VBox>
+        </HBox>
     </center>
-
 </BorderPane>

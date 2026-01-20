@@ -7,12 +7,15 @@ import com.example.mediatracker.Model.AudioVisual;
 import com.example.mediatracker.Model.Pelicula;
 import com.example.mediatracker.Model.Serie;
 import com.example.mediatracker.Model.Temporada;
+import com.example.mediatracker.Service.MediaImgService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
+
+import java.io.IOException;
 
 
 public class DetallesGeneralController implements ISetService, ISetMain {
@@ -31,14 +34,22 @@ public class DetallesGeneralController implements ISetService, ISetMain {
     @FXML private Accordion accordionTemp;
     @FXML private ImageView iconVolver;
 
+    @FXML private ImageView imgPoster;
+
     private IService service;
     private MainController main;
+    private MediaImgService imgService;
 
     @Override
     public void setService(IService service) {
         this.service = service;
         AudioVisual a = service.getSeleccionado();
         if (a == null) return;
+        try {
+            imgService = new MediaImgService();
+        } catch (IOException e){
+            throw new RuntimeException(e);
+        }
         cargarDatosBase(a);
         if (a instanceof Serie serie) {
             mostrarSerie(serie);
@@ -60,6 +71,7 @@ public class DetallesGeneralController implements ISetService, ISetMain {
         lblRewiew.setText(a.getRewiew());
         lblPuntuacion.setText("★ " + a.getPuntuacion());
         lblLoVi.setText(a.isLoVi() ? "Visto" : "No visto");
+        imgPoster.setImage(imgService.cargarImg(a.getImgPath(), 150, 220));
     }
     private void mostrarSerie(Serie serie) {
         boxSerie.setVisible(true);
