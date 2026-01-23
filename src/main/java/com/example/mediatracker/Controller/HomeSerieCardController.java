@@ -10,11 +10,9 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.input.MouseEvent;
 
 public class HomeSerieCardController {
-
     @FXML private Label lblTitulo;
     @FXML private Label lblEstado;
     @FXML private ProgressBar progreso;
-
     private IService service;
     private MainController main;
     private Serie serie;
@@ -27,10 +25,6 @@ public class HomeSerieCardController {
         actualizarEstado();
     }
 
-    /* -------------------------
-       ACCIONES DE UI
-       ------------------------- */
-
     @FXML private void abrirDetalles() {
         service.seleccionado(serie);
         main.irDetalles();
@@ -40,28 +34,20 @@ public class HomeSerieCardController {
         e.consume();
         Capitulo siguiente = buscarSiguienteCapituloNoVisto();
         if (siguiente == null) return;
-
         Temporada temp = buscarTemporadaDeCapitulo(siguiente);
         service.marcarVisto(serie, temp, siguiente);
-
         actualizarEstado();
     }
-
-    /* -------------------------
-       MÉTODOS DE APOYO
-       ------------------------- */
 
     private void actualizarEstado() {
         int vistos = 0;
         int total = 0;
-
         for (Temporada t : serie.getTemporadas()) {
             for (Capitulo c : t.getCapitulos()) {
                 total++;
                 if (c.isVisto()) vistos++;
             }
         }
-
         lblEstado.setText(vistos + " / " + total + " episodios vistos");
         progreso.setProgress(total == 0 ? 0 : (double) vistos / total);
     }
@@ -74,7 +60,7 @@ public class HomeSerieCardController {
                 }
             }
         }
-        return null; // ya está todo visto
+        return null;
     }
 
     private Temporada buscarTemporadaDeCapitulo(Capitulo cap) {

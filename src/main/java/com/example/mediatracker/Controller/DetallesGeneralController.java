@@ -14,28 +14,22 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-
 import java.io.IOException;
-
 
 public class DetallesGeneralController implements ISetService, ISetMain {
 
     @FXML private Label lblTitulo;
-    @FXML private Label lblMeta;
-
+    @FXML private Label lblContenido;
     @FXML private Label lblLoVi;
     @FXML private Label lblPuntuacion;
     @FXML private Label lblDuracion;
-
     @FXML private Label lblDescripcion;
     @FXML private Label lblRewiew;
 
     @FXML private VBox boxSerie;
     @FXML private Accordion accordionTemp;
     @FXML private ImageView iconVolver;
-
     @FXML private ImageView imgPoster;
-
     private IService service;
     private MainController main;
     private MediaImgService imgService;
@@ -66,7 +60,7 @@ public class DetallesGeneralController implements ISetService, ISetMain {
     }
     private void cargarDatosBase(AudioVisual a) {
         lblTitulo.setText(a.getTitulo());
-        lblMeta.setText(a.getGenero() + " • " + a.getAnioPub() + " • " + a.getPlataforma());
+        lblContenido.setText(a.getGenero() + " • " + a.getAnioPub() + " • " + a.getPlataforma());
         lblDescripcion.setText(a.getDescripcion());
         lblRewiew.setText(a.getRewiew());
         lblPuntuacion.setText("★ " + a.getPuntuacion());
@@ -106,8 +100,6 @@ public class DetallesGeneralController implements ISetService, ISetMain {
             TempController controller = loader.getController();
             controller.setView(service,main,t);
             TitledPane pane = new TitledPane("Temporada " + t.getNumTemp(), vista);
-            //pane.setStyle("-fx-background-color: #111827; -fx-border-color: #1f2937;" +
-            //        "-fx-border-radius: 10; -fx-background-radius:10");
             pane.setExpanded(false);
             return pane;
         } catch (Exception e){

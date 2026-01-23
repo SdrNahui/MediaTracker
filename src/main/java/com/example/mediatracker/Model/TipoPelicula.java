@@ -21,7 +21,6 @@ public enum TipoPelicula {
             if (t.texto.equalsIgnoreCase(text)) {
                 return t;
             }
-
         }
         throw new IllegalArgumentException("Tipo de pelicula invalido: " + text);
     }

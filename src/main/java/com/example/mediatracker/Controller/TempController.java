@@ -48,7 +48,8 @@ public class TempController {
                 }
                 try {
                     if(loader == null){
-                        loader = new FXMLLoader(getClass().getResource("/com/example/mediatracker/capCellView.fxml"));
+                        loader = new FXMLLoader(getClass()
+                                .getResource("/com/example/mediatracker/capCellView.fxml"));
                         setGraphic(loader.load());
                         controller = loader.getController();
                     }
@@ -59,7 +60,6 @@ public class TempController {
                 }
             }
         });
-
     }
     @FXML private void agregarCap(){
         service.seleccionadoTemp(temporada);
@@ -120,5 +120,4 @@ public class TempController {
             case null -> lblMensaje.setStyle(null);
         }
     }
-
 }

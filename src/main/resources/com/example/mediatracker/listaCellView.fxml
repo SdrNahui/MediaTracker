@@ -4,16 +4,17 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.image.ImageView?>
-<HBox fx:id="root" styleClass="card" alignment="CENTER_LEFT" spacing="15" stylesheets="@nightwing.css" xmlns:fx="http://javafx.com/fxml/1"
-      xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.mediatracker.Controller.ListaCellController">
+<HBox fx:id="root" styleClass="card" alignment="CENTER_LEFT" spacing="15" stylesheets="@nightwing.css"
+      xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12"
+      fx:controller="com.example.mediatracker.Controller.ListaCellController">
 
     <VBox spacing="4">
-        <ImageView fx:id="imgPoster" />
+        <ImageView fx:id="imgPoster" fitWidth="150" fitHeight="220" preserveRatio="true" smooth="true" />
         <Label fx:id="lblTitulo" style="-fx-font-weight: bold; -fx-font-size: 14;" />
         <Label fx:id="lblInfo" style="-fx-text-fill: #888; -fx-font-weight: bold; -fx-font-size: 14;" />
-        <Label fx:id="lblDescripcion" style="-fx-text-fill: #888;" />
+        <Label fx:id="lblDescripcion" style="-fx-text-fill: #888;" maxHeight="60" maxWidth="180" textOverrun="ELLIPSIS"
+        wrapText="true"/>
     </VBox>
-
     <Label fx:id="lblTipo" style="-fx-background-color: #3b82f6; -fx-text-fill: white; -fx-padding: 2 6;
     -fx-background-radius: 6;" alignment="BOTTOM_RIGHT" />
 </HBox>

@@ -11,22 +11,16 @@
 <?import javafx.geometry.Insets?>
 
 <BorderPane
-        xmlns="http://javafx.com/javafx"
-        xmlns:fx="http://javafx.com/fxml"
+        xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
         fx:controller="com.example.mediatracker.Controller.DetallesGeneralController"
         style="-fx-background-color: #0D0F12;">
-
     <!-- ICONO VOLVER -->
     <left>
         <VBox alignment="TOP_LEFT">
             <padding>
                 <Insets top="20" right="20" bottom="20" left="20"/>
             </padding>
-            <ImageView fx:id="iconVolver"
-                       fitWidth="28"
-                       fitHeight="28"
-                       preserveRatio="true"
-                       pickOnBounds="true"
+            <ImageView fx:id="iconVolver" fitWidth="28" fitHeight="28" preserveRatio="true" pickOnBounds="true"
                        style="-fx-cursor: hand;">
                 <image>
                     <Image url="@imagenes/volver.png"/>
@@ -34,78 +28,46 @@
             </ImageView>
         </VBox>
     </left>
-
     <!-- CONTENIDO PRINCIPAL -->
     <center>
         <HBox spacing="40" style="-fx-padding: 30;" alignment="TOP_LEFT">
-
-            <!-- POSTER -->
+            <!-- IMG -->
             <VBox alignment="TOP_CENTER">
-                <ImageView fx:id="imgPoster"
-                           fitWidth="180"
-                           preserveRatio="true"
-                           smooth="true"
+                <ImageView fx:id="imgPoster" fitWidth="180" preserveRatio="true" smooth="true"
                            style="-fx-effect: dropshadow(gaussian, black, 20, 0.3, 0, 0);" />
             </VBox>
-
             <!-- INFO -->
             <VBox spacing="18" maxWidth="650" prefWidth="650">
-
-                <!-- HEADER -->
+                <!-- CONTENIDO DE INFO -->
                 <VBox spacing="6">
-                    <Label fx:id="lblTitulo"
-                           style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #1E90FF;" />
-
-                    <Label fx:id="lblMeta"
-                           style="-fx-text-fill: #9db4d6; -fx-font-size: 14px;" />
+                    <Label fx:id="lblTitulo" style="-fx-font-size: 32px; -fx-font-weight: bold;
+                     -fx-text-fill: #1E90FF;" />
+                    <Label fx:id="lblContenido" style="-fx-text-fill: #9db4d6; -fx-font-size: 14px;" />
                 </VBox>
-
                 <!-- STATS -->
                 <HBox spacing="25">
-                    <Label fx:id="lblLoVi"
-                           style="-fx-text-fill: #6fb0ff; -fx-font-size: 15px;" />
-
-                    <Label fx:id="lblPuntuacion"
-                           style="-fx-text-fill: gold; -fx-font-size: 15px;" />
-
-                    <Label fx:id="lblDuracion"
-                           style="-fx-text-fill: #cbd5e1; -fx-font-size: 15px;" />
+                    <Label fx:id="lblLoVi" style="-fx-text-fill: #6fb0ff; -fx-font-size: 15px;" />
+                    <Label fx:id="lblPuntuacion" style="-fx-text-fill: gold; -fx-font-size: 15px;" />
+                    <Label fx:id="lblDuracion" style="-fx-text-fill: #cbd5e1; -fx-font-size: 15px;" />
                 </HBox>
-
                 <Separator />
-
                 <!-- DESCRIPCIÓN -->
                 <VBox spacing="6">
-                    <Label text="Descripción"
-                           style="-fx-text-fill: #6fb0ff; -fx-font-size: 16px;" />
-
-                    <Label fx:id="lblDescripcion"
-                           wrapText="true"
-                           style="-fx-text-fill: white; -fx-font-size: 14px;" />
+                    <Label text="Descripción" style="-fx-text-fill: #6fb0ff; -fx-font-size: 16px;" />
+                    <Label fx:id="lblDescripcion" wrapText="true" style="-fx-text-fill: white; -fx-font-size: 14px;" />
                 </VBox>
-
                 <!-- BLOQUE SERIE -->
-                <VBox fx:id="boxSerie"
-                      spacing="12"
-                      visible="false"
-                      managed="false">
-
+                <VBox fx:id="boxSerie" spacing="12" visible="false" managed="false">
                     <Separator />
-
                     <HBox alignment="CENTER_LEFT">
-                        <Label text="Temporadas"
-                               style="-fx-text-fill: #1E90FF; -fx-font-size: 18px;" />
+                        <Label text="Temporadas" style="-fx-text-fill: #1E90FF; -fx-font-size: 18px;" />
                         <Region HBox.hgrow="ALWAYS"/>
-                        <Button text="Agregar temporada"
-                                onAction="#agregarTemp"/>
+                        <Button text="Agregar temporada" onAction="#agregarTemp"/>
                     </HBox>
-
                     <Accordion fx:id="accordionTemp"/>
                 </VBox>
-
                 <!-- REVIEW -->
-                <Label fx:id="lblRewiew"
-                       style="-fx-text-fill: #6fb0ff; -fx-font-size: 15px;" />
+                <Label fx:id="lblRewiew" style="-fx-text-fill: #6fb0ff; -fx-font-size: 15px;" />
             </VBox>
         </HBox>
     </center>

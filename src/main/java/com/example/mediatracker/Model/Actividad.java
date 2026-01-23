@@ -43,17 +43,4 @@ public class Actividad {
     public String getMsj(){
         return msj;
     }
-    @Override
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        sb.append("Continuar viendo ");
-        if(numTemp != null && numCap != null){
-           sb.append(refTitulo).append(" T").append(numTemp).append(" E").append(numCap);
-           return sb.toString();
-        }
-        sb.append(refTitulo);
-        return sb.toString();
-    }
-
-
 }

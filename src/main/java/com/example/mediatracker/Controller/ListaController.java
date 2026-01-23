@@ -9,7 +9,6 @@ import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.ScaleTransition;
 import javafx.collections.ListChangeListener;
-import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -18,16 +17,16 @@ import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Duration;
-
 import java.io.IOException;
 import java.util.List;
 
 public class ListaController implements ISetService, ISetMain {
-    @FXML TextField txtBuscar;
-    @FXML Label lblVacio;
-    @FXML Label lblMensaje;
-    @FXML FlowPane contenedor;
+    @FXML private TextField txtBuscar;
+    @FXML private Label lblVacioBusqueda;
+    @FXML private Label lblMensaje;
+    @FXML private FlowPane contenedor;
     private ListaCellController cardSelec;
+    private boolean estaBuscando = false;
     private IService service;
     private MainController main;
     @Override
@@ -42,15 +41,21 @@ public class ListaController implements ISetService, ISetMain {
         this.main = main;
     }
     public void initialize(){
-        txtBuscar.textProperty().addListener((observableValue, s, fil) -> buscar());
+        txtBuscar.textProperty().addListener((observableValue, s, fil)
+                -> buscar());
     }
     private void cargar(List<AudioVisual> lista){
         contenedor.getChildren().clear();
         if(lista.isEmpty()){
-            lblVacio.setVisible(true);
+            lblVacioBusqueda.setVisible(true);
+            if(estaBuscando){
+                lblVacioBusqueda.setText("No se encontraron resultados.");
+            } else {
+                lblVacioBusqueda.setText("No hay contenido Audiovisual.");
+            }
             return;
         }
-        lblVacio.setVisible(false);
+        lblVacioBusqueda.setVisible(false);
         for (AudioVisual av : lista){
             contenedor.getChildren().add(crearCard(av));
         }
@@ -82,15 +87,19 @@ public class ListaController implements ISetService, ISetMain {
     }
     @FXML private void buscar(){
         String texto = txtBuscar.getText();
+        if(texto == null || texto.isBlank()){
+            estaBuscando = false;
+            cargar(service.getAudioVisuales());
+            return;
+        }
+        estaBuscando = true;
         List<AudioVisual> resultado = service.getAudioVisuales().stream()
-                .filter(av ->service.buscarInteligente((AudioVisual) av,texto)).toList();
+                .filter(av ->service.buscarInteligente((AudioVisual) av,texto.toLowerCase())).toList();
         cargar(resultado);
     }
     @FXML private void editar(){
-        AudioVisual seleccionado = /*vista.getSelectionModel().getSelectedItem(); */ service.getSeleccionado();
+        AudioVisual seleccionado = service.getSeleccionado();
         if(seleccionado == null){
-            /*lblMensaje.setStyle("-fx-text-fill: #64587f;");
-            lblMensaje.setText("Primero selecciona lo que quieras editar");*/
             tintarMsj("Primero seleccione que quiere editar.", TipoMsj.ERROR);
             return;
         }
@@ -100,7 +109,6 @@ public class ListaController implements ISetService, ISetMain {
     @FXML private void eliminar(){
         AudioVisual seleccionado =service.getSeleccionado();
         if(seleccionado == null){
-
             tintarMsj("Primero seleccione que quiere eliminar.", TipoMsj.ERROR);
             return;
         }
@@ -112,7 +120,6 @@ public class ListaController implements ISetService, ISetMain {
             if(respuesta == ButtonType.OK){
                 service.eliminar(seleccionado);
                 lblMensaje.setText(service.getMensaje());
-                //cargar(service.getAudioVisuales());
             }
         });
     }
@@ -150,5 +157,4 @@ public class ListaController implements ISetService, ISetMain {
         anim.setOnFinished(e -> onFinish.run());
         anim.play();
     }
-
 }

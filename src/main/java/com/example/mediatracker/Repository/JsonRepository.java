@@ -4,7 +4,6 @@ import com.example.mediatracker.Model.AudioVisual;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-
 import java.io.*;
 import java.lang.reflect.Type;
 import java.time.LocalDate;
@@ -27,7 +26,6 @@ public class JsonRepository implements IRepository<AudioVisual> {
         try(Reader reader = new FileReader(file)){
             Type listType = new TypeToken<List<AudioVisual>>(){}.getType();
             return gson.fromJson(reader,listType);
-
         } catch (IOException e){
             e.printStackTrace();
             return new ArrayList<>();

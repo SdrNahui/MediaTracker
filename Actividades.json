@@ -1,94 +1,103 @@
 [
   {
-    "msj": "Se editó la Serie: la reina batata",
-    "refTitulo": "la reina batata",
-    "fecha": "2026-01-20"
+    "msj": "Se agregó el capitulo 6 en la temporada 2 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 2,
+    "numCap": 6,
+    "fecha": "2026-01-23"
   },
   {
-    "msj": "Se editó la Serie: Stranger Things",
-    "refTitulo": "Stranger Things",
-    "fecha": "2026-01-20"
+    "msj": "Se agregó el capitulo 5 en la temporada 2 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 2,
+    "numCap": 5,
+    "fecha": "2026-01-23"
   },
   {
-    "msj": "Se editó la Serie: Stranger Things",
-    "refTitulo": "Stranger Things",
-    "fecha": "2026-01-20"
+    "msj": "Se agregó el capitulo 4 en la temporada 2 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 2,
+    "numCap": 4,
+    "fecha": "2026-01-23"
   },
   {
-    "msj": "Se editó el capitulo 2 en la temporada 2 de la serie Stranger Things",
-    "refTitulo": "Stranger Things",
+    "msj": "Se agregó el capitulo 3 en la temporada 2 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 2,
+    "numCap": 3,
+    "fecha": "2026-01-23"
+  },
+  {
+    "msj": "Se agregó el capitulo 2 en la temporada 2 de la serie Loki",
+    "refTitulo": "Loki",
     "numTemp": 2,
     "numCap": 2,
-    "fecha": "2026-01-18"
+    "fecha": "2026-01-23"
   },
   {
-    "msj": "Se editó el capitulo 1 en la temporada 3 de la serie Stranger Things",
-    "refTitulo": "Stranger Things",
-    "numTemp": 3,
+    "msj": "Se agregó el capitulo 1 en la temporada 2 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 2,
     "numCap": 1,
-    "fecha": "2026-01-18"
+    "fecha": "2026-01-23"
+  },
+  {
+    "msj": "Se agregó el capitulo 6 en la temporada 1 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 1,
+    "numCap": 6,
+    "fecha": "2026-01-23"
+  },
+  {
+    "msj": "Se agregó el capitulo 5 en la temporada 1 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 1,
+    "numCap": 5,
+    "fecha": "2026-01-23"
+  },
+  {
+    "msj": "Se agregó el capitulo 4 en la temporada 1 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 1,
+    "numCap": 4,
+    "fecha": "2026-01-23"
+  },
+  {
+    "msj": "Se agregó el capitulo 3 en la temporada 1 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 1,
+    "numCap": 3,
+    "fecha": "2026-01-23"
+  },
+  {
+    "msj": "Se agregó el capitulo 2 en la temporada 1 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 1,
+    "numCap": 2,
+    "fecha": "2026-01-23"
+  },
+  {
+    "msj": "Se agregó el capitulo 1 en la temporada 1 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 1,
+    "numCap": 1,
+    "fecha": "2026-01-23"
+  },
+  {
+    "msj": "Se añadió la temporada 2 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 2,
+    "fecha": "2026-01-22"
+  },
+  {
+    "msj": "Se añadió la temporada 1 de la serie Loki",
+    "refTitulo": "Loki",
+    "numTemp": 1,
+    "fecha": "2026-01-22"
   },
   {
     "msj": "Se completo la serie Stranger Things",
     "refTitulo": "Stranger Things",
-    "fecha": "2026-01-18"
-  },
-  {
-    "msj": "Se completo la temporada 3 de la serie Stranger Things",
-    "refTitulo": "Stranger Things",
-    "numTemp": 3,
-    "fecha": "2026-01-18"
-  },
-  {
-    "msj": "Se vio el capitulo 1(T3) de la serie Stranger Things",
-    "refTitulo": "Stranger Things",
-    "numTemp": 3,
-    "numCap": 1,
-    "fecha": "2026-01-18"
-  },
-  {
-    "msj": "Se completo la temporada 2 de la serie Stranger Things",
-    "refTitulo": "Stranger Things",
-    "numTemp": 2,
-    "fecha": "2026-01-18"
-  },
-  {
-    "msj": "Se vio el capitulo 2(T2) de la serie Stranger Things",
-    "refTitulo": "Stranger Things",
-    "numTemp": 2,
-    "numCap": 2,
-    "fecha": "2026-01-18"
-  },
-  {
-    "msj": "Se editó el capitulo 2 en la temporada 2 de la serie Stranger Things",
-    "refTitulo": "Stranger Things",
-    "numTemp": 2,
-    "numCap": 2,
-    "fecha": "2026-01-18"
-  },
-  {
-    "msj": "Se editó el capitulo 1 en la temporada 3 de la serie Stranger Things",
-    "refTitulo": "Stranger Things",
-    "numTemp": 3,
-    "numCap": 1,
-    "fecha": "2026-01-18"
-  },
-  {
-    "msj": "Se completo la serie Stranger Things",
-    "refTitulo": "Stranger Things",
-    "fecha": "2026-01-18"
-  },
-  {
-    "msj": "Se completo la temporada 3 de la serie Stranger Things",
-    "refTitulo": "Stranger Things",
-    "numTemp": 3,
-    "fecha": "2026-01-18"
-  },
-  {
-    "msj": "Se vio el capitulo 1(T3) de la serie Stranger Things",
-    "refTitulo": "Stranger Things",
-    "numTemp": 3,
-    "numCap": 1,
-    "fecha": "2026-01-18"
+    "fecha": "2026-01-22"
   }
 ]

@@ -9,11 +9,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class AgregarCapituloController implements ISetService, ISetMain {
-    @FXML TextField txtTitulo;
-    @FXML TextField txtDescripcion;
-    @FXML TextField txtDuracion;
-    @FXML Label lblMensaje;
-    @FXML CheckBox chkVisto;
+    @FXML private TextField txtTitulo;
+    @FXML private TextField txtDescripcion;
+    @FXML private TextField txtDuracion;
+    @FXML private Label lblMensaje;
+    @FXML private CheckBox chkVisto;
     private IService service;
     private MainController main;
     private boolean esEdicion;

@@ -4,20 +4,16 @@ import com.example.mediatracker.Model.*;
 import com.example.mediatracker.Service.IService;
 import com.example.mediatracker.Service.ISetMain;
 import com.example.mediatracker.Service.ISetService;
-import com.example.mediatracker.Service.Service;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 
+import javax.swing.text.LabelView;
 import java.io.IOException;
-import java.util.List;
 
 public class HomeController implements ISetService, ISetMain {
     @FXML private FlowPane flowEnCurso;
@@ -32,16 +28,6 @@ public class HomeController implements ISetService, ISetMain {
     public void setService(IService service) {
         this.service = service;
         cargarDatos();
-        service.getActividades()
-                .addListener((javafx.collections.ListChangeListener<Actividad>) c ->
-                { while (c.next()){
-                    if(c.wasAdded()){
-                        for (Actividad a : c.getAddedSubList()) {
-                            agregarActividad(a);
-                        }
-                    }
-                }
-                });
         service.version().addListener((observableValue, oldN, newN) -> {
             refrescarHome();
         } );
@@ -58,14 +44,22 @@ public class HomeController implements ISetService, ISetMain {
     }
     private void cargarSeriesEnCurso(){
         flowEnCurso.getChildren().clear();
+        boolean estaEnCurso = false;
         for(Serie s : service.getSeries()){
             if(estaEncurso(s)){
                 flowEnCurso.getChildren().add(crearCardSerie(s));
+                estaEnCurso = true;
             }
+        }
+        if(!estaEnCurso){
+            flowEnCurso.getChildren().add(msjVacio("No hay series en curso."));
         }
     }
     private void cargarPeliculasVistas() {
         boxPeliculas.getChildren().clear();
+        if(service.getPeliculasRecientes().isEmpty()){
+            boxPeliculas.getChildren().add(msjVacio("No hay peliculas vistas."));
+        }
         for (Pelicula p : service.getPeliculasRecientes()) {
             try {
                 FXMLLoader loader = new FXMLLoader(getClass()
@@ -110,17 +104,16 @@ public class HomeController implements ISetService, ISetMain {
         boxActividad.getChildren().clear();
         ObservableList<Actividad> actividades = service.getActividades();
         if(actividades.isEmpty()){
-            Label vacio = new Label("Todavia no hay actividad.");
-            vacio.setStyle("-fx-text-fill: #64748b;");
-            boxActividad.getChildren().add(vacio);
+            boxActividad.getChildren().add(msjVacio("todavia no hay actividad."));
             return;
         }
-        actividades.stream().limit(10).forEach(a -> agregarActividad(a));
-    /*    for(Actividad a : actividades){
-            Label lblActividad = new Label(a.getMsj());
-            lblActividad.setStyle("-fx-text-fill: #cbd5e1");
-            boxActividad.getChildren().add(lblActividad);
-        } */
+        int max = Math.min(10, actividades.size());
+        for (int i = 0; i < max; i++){
+            Actividad a = actividades.get(i);
+            Label lbl = new Label(a.getMsj());
+            lbl.setStyle("-fx-text-fill: #cbd5e1");
+            boxActividad.getChildren().add(lbl);
+        }
     }
     private void cargarStats(){
         int totalSeries = service.getSeries().size();
@@ -137,16 +130,15 @@ public class HomeController implements ISetService, ISetMain {
         lblTotalSeries.setText(String.valueOf(totalSeries));
         lblCapsVistos.setText(String.valueOf(capsVistos));
     }
-    private void agregarActividad(Actividad a){
-        if(boxActividad.getChildren().size() >= 10){
-            boxActividad.getChildren().remove(boxActividad.getChildren().size() - 1);
-        }
-        Label lbl = new Label(a.getMsj());
-        lbl.setStyle("-fx-text-fill: #cbd5e1");
-        boxActividad.getChildren().addFirst(lbl);
-    }
     private void refrescarHome(){
         cargarSeriesEnCurso();
+        cargarPeliculasVistas();
+        cargarActividad();
         cargarStats();
+    }
+    private Label msjVacio(String texto){
+        Label vacio = new Label(texto);
+        vacio.setStyle("-fx-text-fill: #64748b;");
+        return vacio;
     }
 }

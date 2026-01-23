@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" spacing="20" style="-fx-background-color: #0D0F12; -fx-padding: 25;" xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.mediatracker.Controller.AgregarCapituloController" >
+<VBox alignment="CENTER" spacing="20" style="-fx-background-color: #0D0F12; -fx-padding: 25;"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mediatracker.Controller.AgregarCapituloController" >
     <Label style="-fx-font-size: 26px -fx-font-weight: bold; -fx-text-fill: #1E90FF;" text="Agregar Capitulo" />
     <Button text="volver" onAction="#volver"    />
     <TextField fx:id="txtTitulo" promptText="Titulo" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
      -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8;
      -fx-border-width: 1;"/>
-    <TextField fx:id="txtDescripcion" promptText="Descripcion" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
-     -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8;
-     -fx-border-width: 1;"/>
+    <TextField fx:id="txtDescripcion" promptText="Descripcion" style="-fx-background-color: #1a1c20;
+    -fx-text-fill: white; -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF;
+     -fx-border-radius: 8; -fx-border-width: 1;"/>
     <TextField fx:id="txtDuracion" promptText="Duracion" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
      -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8;
      -fx-border-width: 1;"/>
     <CheckBox fx:id="chkVisto" text="Se Vio?" style="-fx-text-fill: white; -fx-font-size: 14px;"/>
-
     <Button  text="guardar" onAction="#guardar" />
     <Label fx:id="lblMensaje" />
 </VBox>

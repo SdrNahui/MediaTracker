@@ -1,8 +1,5 @@
 package com.example.mediatracker.Model;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,12 +50,6 @@ public class Temporada {
     }
     public void setNumTemp(int numTemp){
         this.numTemp = numTemp;
-    }
-
-    @Override
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        return sb.toString();
     }
 
 }

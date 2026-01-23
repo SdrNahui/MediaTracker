@@ -4,16 +4,9 @@
 <?import javafx.scene.layout.*?>
 
 <VBox spacing="8"
-      xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.mediatracker.Controller.TempController"
-      >
-
-    <Label fx:id="lblTemp"
-           style="-fx-text-fill: #cbd5e1;
-                  -fx-font-size: 15px;
-                  -fx-font-weight: bold;" />
-
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mediatracker.Controller.TempController">
+    <Label fx:id="lblTemp" style="-fx-text-fill: #cbd5e1; -fx-font-size: 15px; -fx-font-weight: bold;" />
     <ListView fx:id="listaCaps" styleClass="dark-list" VBox.vgrow="ALWAYS"/>
     <Label fx:id="lblMensaje" text=""/>
     <HBox spacing="10">
@@ -22,5 +15,4 @@
         <Button text="Eliminar capitulo" onAction="#eliminarCap" />
         <Button text="Eliminar temporada" onAction="#eliminarTemp"/>
     </HBox>
-
 </VBox>

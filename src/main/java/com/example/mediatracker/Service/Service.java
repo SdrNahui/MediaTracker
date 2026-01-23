@@ -9,10 +9,8 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.value.ObservableIntegerValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Service implements IService {
@@ -60,8 +58,12 @@ public class Service implements IService {
                 return new ResultadoValidacion(false, getMensaje());
             }
         }
-        if(puntuacion <= 0.0 || puntuacion > 10.0){
-            setMensaje("La puntuacion no puede ser menor o igual a 0.0 ni mayor a 10.0");
+        if(!loVi && puntuacion > 0){
+            setMensaje("La puntuación no puede ser puntuada si no se vio.");
+            return new ResultadoValidacion(false, getMensaje());
+        }
+        if(puntuacion < 0.0 || puntuacion > 10.0){
+            setMensaje("La puntuación no puede ser menor o igual a 0.0 ni mayor a 10.0");
             return new ResultadoValidacion(false, getMensaje());
         }
         if(tipo != null){
@@ -71,31 +73,24 @@ public class Service implements IService {
             tipoPel = tipoPel.trim().toLowerCase();
         }
         ResultadoValidacion res = null;
-        /*if(estaSeleccionado()){
-            res = editar(audioVisualSelect, titulo, genero, descripcion, anioPub, plataforma, duracion, loVi, puntuacion,
-                    rewiew, tipo, tipoPel);
-            if(res.isOk()) {
-                //audioVisualSelect = null;
-                seleccionado(null);
-            }
-            return res;
-        } else { */
-            System.out.println("El tipo es: " + tipo);
             if (tipo.equals("serie")){
-                ResultadoValidacion rS1 = agregarSerie(titulo,genero,descripcion,anioPub,plataforma,duracion,loVi,puntuacion,rewiew);
+                ResultadoValidacion rS1 = agregarSerie(titulo,genero,descripcion,anioPub,plataforma,duracion,loVi
+                        ,puntuacion,rewiew, imgPath);
                 res = rS1;
             } else if (tipo.equals("pelicula")){
                 ResultadoValidacion rP1 = agregarPelicula(titulo, genero,descripcion, anioPub, plataforma, duracion,
-                        loVi, puntuacion, rewiew, tipoPel);
+                        loVi, puntuacion, rewiew, tipoPel, imgPath);
                 res = rP1;
             }
-        //}
+
         return res;
     }
     private ResultadoValidacion agregarSerie(String titulo, String genero,String descripcion, LocalDate anioPub,
                                              String plataforma, double duracion, boolean loVi, double puntuacion,
-                                             String rewiew){
-        AudioVisual s1 = new Serie(titulo, genero, descripcion, anioPub, plataforma, duracion, loVi, puntuacion, rewiew);
+                                             String rewiew, String imgPath){
+        AudioVisual s1 = new Serie(titulo, genero, descripcion, anioPub, plataforma, duracion, loVi, puntuacion,
+                rewiew);
+        s1.setImgPath(imgPath);
         audioVisuales.add(s1);
         guardarCambios();
         registrarAudioVisual(s1);
@@ -105,10 +100,11 @@ public class Service implements IService {
     }
     private ResultadoValidacion agregarPelicula(String titulo, String genero,String descripcion, LocalDate anioPub,
                                                 String plataforma, double duracion, boolean loVi, double puntuacion,
-                                                String rewiew, String tipoPelStr){
+                                                String rewiew, String tipoPelStr, String imgPath){
         TipoPelicula tipoPel = TipoPelicula.convertirStr(tipoPelStr);
         AudioVisual p1 = new Pelicula(titulo, genero,descripcion, anioPub, plataforma, duracion,
                 loVi, puntuacion, rewiew, tipoPel);
+        p1.setImgPath(imgPath);
         audioVisuales.add(p1);
         guardarCambios();
         registrarAudioVisual(p1);
@@ -142,7 +138,6 @@ public class Service implements IService {
             ((Pelicula) audioVisual).setTipoPel(tipoPel);
         }
         guardarCambios();
-        registrarEdicionAV(audioVisual);
         setMensaje("Se edito correctamente.");
         return new ResultadoValidacion(true, getMensaje());
     }
@@ -182,22 +177,12 @@ public class Service implements IService {
             setMensaje("La serie no existe o no fue seleccionada.");
             return;
         }
-        if(estaSeleccionadoTemp()){
-            editarTemp();
-            temporadaSelect = null;
-        } else {
-            Temporada t1 = serie.añadirTemp();
-            guardarCambios();
-            registrarTemporada(serie, t1);
-            setMensaje("Temporada agregada correctamente.");
-        }
-
+        Temporada t1 = serie.añadirTemp();
+        guardarCambios();
+        registrarTemporada(serie, t1);
+        notifyChange();
+        setMensaje("Temporada agregada correctamente.");
     }
-    @Override
-    public void editarTemp() {
-
-    }
-
     @Override
     public void eliminarTemp(Serie serie, Temporada temporada) {
         if(serie == null || temporada == null){
@@ -206,18 +191,12 @@ public class Service implements IService {
         }
         serie.eliminarTemp(temporada);
         guardarCambios();
-        registrarEminacionTemp(serie, temporada);
         setMensaje("La temporada fue eliminada correctamente.");
     }
 
     @Override
     public void seleccionadoTemp(Temporada temporada) {
         this.temporadaSelect = temporada;
-    }
-
-    @Override
-    public boolean estaSeleccionadoTemp() {
-        return temporadaSelect != null;
     }
 
     @Override
@@ -230,7 +209,6 @@ public class Service implements IService {
               return  t;
             }
         }
-
         return  null;
     }
     //CAPITULO
@@ -250,20 +228,13 @@ public class Service implements IService {
             return new ResultadoValidacion(false, getMensaje());
         }
         ResultadoValidacion res = null;
-        /*if(estaSeleccionadoCap()){
-            res = editarCap(capituloSelect, titulo, descripcion, duracion, visto);
-            if(res.isOk()) {
-                seleccionadoCap(null);
-            }
-            return res;
-        } else { */
             Capitulo c1 = temporada.añadirCapitulo(titulo,descripcion, duracion, visto);
             Serie s1 = (Serie) getSeleccionado();
             guardarCambios();
             registrarCapitulo(s1, temporada, c1);
+            notifyChange();
             setMensaje("El capitulo fue añadido correctamente.");
             res = new ResultadoValidacion(true, getMensaje());
-        //}
         return  res;
     }
     @Override
@@ -272,16 +243,11 @@ public class Service implements IService {
         if (capitulo == null){
             return new ResultadoValidacion(false, "No hay elemento seleccionado.");
         }
-        System.out.println("Entro en editar?");
         capitulo.setTituloCap(titulo);
         capitulo.setDescripcionCap(descripcion);
         capitulo.setVisto(visto);
         capitulo.setDuracionCap(duracion);
-        Serie s1 = (Serie) getSeleccionado();
-        System.out.println("LA serie " + s1);
-        Temporada t1 = buscarTempDelCap(s1,capitulo);
         guardarCambios();
-        registrarEdicionCap(s1, t1, capitulo);
         setMensaje("El capitulo fue editado correctamente.");
         return new ResultadoValidacion(true, getMensaje());
     }
@@ -336,7 +302,7 @@ public class Service implements IService {
         this.mensaje = mensaje;
     }
 
-    //TIPO DE FORM PARA LOS AGREGAR/EDITAR
+    //TIPO DE FORMULARIO PARA LOS AGREGAR/EDITAR
     @Override
     public void setModoFormulario(ModoFormulario modoFormulario){
         this.modoFormulario = modoFormulario;
@@ -345,7 +311,7 @@ public class Service implements IService {
     public ModoFormulario getModoFormulario(){
         return modoFormulario;
     }
-//GETTERS
+    //GETTERS
     @Override
     public ObservableList getAudioVisuales() {
         return audioVisuales;
@@ -385,12 +351,6 @@ public class Service implements IService {
         registrarActividades(new Actividad(msj, av.getTitulo()));
     }
     @Override
-    public void registrarEdicionAV(AudioVisual av){
-        String tipo = (av instanceof Serie) ? "Serie" : "Pelicula";
-        String msj = "Se editó la " + tipo + ": " + av.getTitulo();
-        registrarActividades(new Actividad(msj, av.getTitulo()));
-    }
-    @Override
     public void registrarEliminacionAV(AudioVisual av){
         String tipo = (av instanceof Serie) ? "Serie" : "Pelicula";
         String msj = "Se eliminó la " + tipo + ": " + av.getTitulo();
@@ -404,21 +364,8 @@ public class Service implements IService {
     }
 
     @Override
-    public void registrarEminacionTemp(Serie s, Temporada t) {
-        String msj = "Se eliminó la temporada " + t.getNumTemp() + " de la serie " + s.getTitulo();
-        registrarActividades(new Actividad(msj, s.getTitulo(), t.getNumTemp(), null));
-    }
-
-    @Override
     public void registrarCapitulo(Serie s, Temporada t, Capitulo c) {
         String msj = "Se agregó el capitulo " + c.getNumCap() + " en la temporada " + t.getNumTemp() +
-                " de la serie " + s.getTitulo();
-        registrarActividades(new Actividad(msj, s.getTitulo(), t.getNumTemp(), c.getNumCap()));
-    }
-
-    @Override
-    public void registrarEdicionCap(Serie s, Temporada t, Capitulo c) {
-        String msj = "Se editó el capitulo " + c.getNumCap() + " en la temporada " + t.getNumTemp() +
                 " de la serie " + s.getTitulo();
         registrarActividades(new Actividad(msj, s.getTitulo(), t.getNumTemp(), c.getNumCap()));
     }
@@ -436,7 +383,7 @@ public class Service implements IService {
             return;
         }
         c.setVisto(true);
-        String msjC = "Se vio el capitulo " + c.getNumCap() + "(T" + t.getNumTemp() + ") de la serie " +
+        String msjC = "Se vio el capitulo " + c.getNumCap() + " (T" + t.getNumTemp() + ") de la serie " +
                 s.getTitulo();
         registrarActividades(new Actividad(msjC,s.getTitulo(), t.getNumTemp(), c.getNumCap()));
         notifyChange();
@@ -459,20 +406,5 @@ public class Service implements IService {
     }
     public void notifyChange(){
         version.set(version().get() + 1);
-    }
-    @Override
-    public void marcarVisto(Pelicula p){
-        if(p == null || p.isLoVi()){
-            return;
-        }
-        p.setLoVi(true);
-        String msj = "Se vio la pelicula " + p.getTitulo();
-        registrarActividades(new Actividad(msj, p.getTitulo(), null, null));
-        guardarCambios();
-    }
-    @Override
-    public void limpiarForm(){
-        capituloSelect = null;
-        setModoFormulario(ModoFormulario.AGREGAR);
     }
 }

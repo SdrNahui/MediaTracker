@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.collections.FXCollections?>
-<?import org.controlsfx.control.ListActionView?>
-<VBox alignment="CENTER" spacing="20" style="-fx-background-color: #0D0F12; -fx-padding: 25;" xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.mediatracker.Controller.AgregarController">
+
+<VBox alignment="CENTER" spacing="15" style="-fx-background-color: #0D0F12; -fx-padding: 25;"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.mediatracker.Controller.AgregarController">
     <Label style="-fx-font-size: 26px -fx-font-weight: bold; -fx-text-fill: #1E90FF;" text="Agregar" />
 
-    <ComboBox fx:id="cmbTipo" promptText="Seleccione una opción" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
-     -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8; -fx-border-width: 1;">
+    <ComboBox fx:id="cmbTipo" promptText="Seleccione una opción"
+              style="-fx-background-color: #1a1c20; -fx-text-fill: white; -fx-background-radius: 8;
+               -fx-border-color: #1E90FF; -fx-border-radius: 8; -fx-border-width: 1;">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Serie" />
@@ -21,9 +20,9 @@
             </FXCollections>
         </items>
     </ComboBox>
-    <ComboBox fx:id="cmbTipoPel" promptText="Tipo de pelicula" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
-     -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8; -fx-border-width: 1;" visible="false"
-    managed="false">
+    <ComboBox fx:id="cmbTipoPel" promptText="Tipo de pelicula" style="-fx-background-color: #1a1c20;
+     -fx-text-fill: white; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8;
+     -fx-border-width: 1;" visible="false" managed="false">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Original" />
@@ -34,39 +33,43 @@
                 <String fx:value="Live Action" />
             </FXCollections>
         </items>
-
     </ComboBox>
-
     <TextField fx:id="txtTitulo" promptText="Título" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
-     -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8; -fx-border-width: 1;" />
+     -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8;
+      -fx-border-width: 1;" />
 
     <TextField fx:id="txtGenero" promptText="Género" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
-     -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8; -fx-border-width: 1;" />
+     -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8;
+      -fx-border-width: 1;" />
 
     <TextArea fx:id="txtDescripcion" prefWidth="150" promptText="Descripción" style="-fx-background-color: #1a1c20;
     -fx-text-fill: white; -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF;"
               stylesheets="@nightwing.css" />
-
-
-    <DatePicker fx:id="txtAnioPub" promptText="Año de publicación" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
-    -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8; -fx-border-width: 1;" />
+    <DatePicker fx:id="txtAnioPub" promptText="Año de publicación" />
 
     <TextField fx:id="txtPlataforma" promptText="Plataforma" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
-    -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8; -fx-border-width: 1;" />
+    -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8;
+     -fx-border-width: 1;" />
 
     <TextField fx:id="txtDuracion" promptText="Duración" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
-    -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8; -fx-border-width: 1;" />
+    -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8;
+     -fx-border-width: 1;" />
 
     <CheckBox fx:id="chkVisto" text="Se Vio?" style="-fx-text-fill: white; -fx-font-size: 14px;" />
 
     <TextField fx:id="txtPuntuacion" promptText="Puntuación" style="-fx-background-color: #1a1c20; -fx-text-fill: white;
-    -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8; -fx-border-width: 1;" />
+    -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8;
+     -fx-border-width: 1;" />
 
     <TextArea fx:id="txtRewiew" prefWidth="150" promptText="Rewiew" style="-fx-background-color: #1a1c20;
     -fx-text-fill: white; -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF;"
               stylesheets="@nightwing.css" />
+    <HBox spacing="50" alignment="CENTER" >
+    <TextField fx:id="txtUrl" promptText="URL de imagen (opcional)" style="-fx-background-color: #1a1c20;
+    -fx-text-fill: white; -fx-prompt-text-fill: #3d5a80; -fx-background-radius: 8; -fx-border-color: #1E90FF;"
+               stylesheets="@nightwing.css" />
     <Button text="Agregar Imagen" onAction="#seleccionarImg"/>
+    </HBox>
     <Button text="Guardar" onAction="#guardar"  />
     <Label fx:id="lblMensaje" text=" " style="-fx-text-fill: #1E90FF; -fx-font-size: 14px;" />
-
 </VBox>

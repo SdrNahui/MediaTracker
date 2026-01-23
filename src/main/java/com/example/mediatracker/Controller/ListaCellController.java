@@ -20,7 +20,7 @@ public class ListaCellController {
     private MediaImgService imgService;
     public void setData(AudioVisual av){
         lblTitulo.setText(av.getTitulo());
-        lblInfo.setText(av.getGenero() + " • " + av.getPlataforma());
+        lblInfo.setText(av.getGenero() + "\n • " + av.getPlataforma());
         lblDescripcion.setText(av.getDescripcion());
         lblTipo.setText(av instanceof Serie ? "serie" : "pelicula");
         try {
@@ -28,7 +28,6 @@ public class ListaCellController {
         } catch (IOException e){
             throw new RuntimeException(e);
         }
-        System.out.println("Img= " + imgService );
         imgPoster.setImage(imgService.cargarImg(av.getImgPath(), 150, 220));
     }
     public void setSeleccionado(boolean seleccionado){

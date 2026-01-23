@@ -6,7 +6,6 @@ import com.example.mediatracker.Service.ISetService;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
 
 public class MenuController implements ISetService, ISetMain {
     @FXML private javafx.scene.control.Label labelHome;

@@ -17,13 +17,12 @@ public class MediaTrackerApplication extends Application {
         IService service = new Service();
         FXMLLoader fxmlLoader = new FXMLLoader(MediaTrackerApplication.class.getResource("mainView.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-
         MainController controller = fxmlLoader.getController();
         controller.setService(service);
         stage.setTitle("MediaTracker v1.0");
         scene.getStylesheets().add(getClass().getResource("nightwing.css").toExternalForm());
-        stage.setHeight(700);
-        stage.setWidth(600);
+        stage.setHeight(780);
+        stage.setWidth(1200);
         stage.getIcons().add(new Image(getClass().getResourceAsStream("logo.png")));
         stage.setScene(scene);
         stage.show();

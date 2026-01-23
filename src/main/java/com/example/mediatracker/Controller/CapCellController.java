@@ -11,6 +11,7 @@ import javafx.scene.layout.HBox;
 public class CapCellController implements ISetService, ISetMain {
     @FXML private HBox root;
     @FXML private Label lblVisto;
+    @FXML private Label lblDescripcion;
     @FXML private Label lblTitulo;
     @FXML private Label lblInfo;
 
@@ -27,6 +28,7 @@ public class CapCellController implements ISetService, ISetMain {
     }
     public void setData(Capitulo cap){
         lblTitulo.setText("E" + cap.getNumCap() + " - " + cap.getTituloCap());
+        lblDescripcion.setText(cap.getDescripcionCap());
         lblInfo.setText(cap.getDuracionCap() + " min");
         if(cap.isVisto()){
             lblVisto.setText("✔");
@@ -36,6 +38,4 @@ public class CapCellController implements ISetService, ISetMain {
             lblVisto.getStyleClass().setAll("cap-no-visto");
         }
     }
-
-
 }

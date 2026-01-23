@@ -27,6 +27,4 @@ public class AudioVisualAdapter implements JsonSerializer<AudioVisual>, JsonDese
             default -> throw new JsonParseException("tipo desconocido:" + tipo);
         };
     }
-
-
 }

@@ -57,19 +57,4 @@ public class Capitulo {
         this.numCap = numCap;
     }
 
-    public void regitrarCapitulo(Serie s, Temporada t, Capitulo c){
-
-    }
-    public void registrarEdicionCap(Serie s, Temporada t, Capitulo c){
-    }
-    public void registrarEliminacionCap(Serie s, Temporada t, Capitulo c){
-    }
-
-    @Override
-    public String toString(){
-        StringBuilder sb = new StringBuilder();
-        sb.append(numCap).append(". ").append(tituloCap).append(" ").append("(").append(duracionCap).append(")").append("\n")
-                .append("Resumen: ").append(descripcionCap);
-        return sb.toString();
-    }
 }

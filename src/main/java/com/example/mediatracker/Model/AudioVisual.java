@@ -39,8 +39,8 @@ public abstract class AudioVisual {
         }
         this.duracion = duracion;
         this.loVi = loVi;
-        if(puntuacion <= 0.0 || puntuacion >= 10.0){
-            throw  new RuntimeException("La puntuacion no puede ser menor a 1.0 ni mayor a 10.0");
+        if(puntuacion < 0.0 || puntuacion >= 10.0){
+            throw  new RuntimeException("La puntuacion no puede ser menor a 0.0 ni mayor a 10.0");
         }
         this.puntuacion = puntuacion;
         this.rewiew = rewiew;
@@ -82,9 +82,6 @@ public abstract class AudioVisual {
     }
 
     public String getRewiew() {
-        if(rewiew == null){
-            return "";
-        }
         return rewiew;
     }
     public String getImgPath(){

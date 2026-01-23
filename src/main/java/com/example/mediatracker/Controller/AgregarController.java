@@ -7,26 +7,25 @@ import com.example.mediatracker.Model.Serie;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.FileChooser;
-
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
 public class  AgregarController implements ISetService, ISetMain {
-
-    @FXML TextField txtTitulo;
-    @FXML TextField txtGenero;
-    @FXML TextArea txtDescripcion;
-    @FXML DatePicker txtAnioPub;
-    @FXML TextField txtPlataforma;
-    @FXML TextField txtDuracion;
-    @FXML CheckBox chkVisto;
-    @FXML TextField txtPuntuacion;
-    @FXML TextArea txtRewiew;
-    @FXML Label lblMensaje;
-    @FXML ComboBox<String> cmbTipo;
-    @FXML ComboBox<String> cmbTipoPel;
+    @FXML private TextField txtTitulo;
+    @FXML private TextField txtGenero;
+    @FXML private TextArea txtDescripcion;
+    @FXML private DatePicker txtAnioPub;
+    @FXML private TextField txtPlataforma;
+    @FXML private TextField txtDuracion;
+    @FXML private CheckBox chkVisto;
+    @FXML private TextField txtPuntuacion;
+    @FXML private TextArea txtRewiew;
+    @FXML private Label lblMensaje;
+    @FXML private ComboBox<String> cmbTipo;
+    @FXML private ComboBox<String> cmbTipoPel;
+    @FXML private TextField txtUrl;
     private IService service;
     private MainController main;
     private MediaImgService imgService;
@@ -52,6 +51,9 @@ public class  AgregarController implements ISetService, ISetMain {
             if (newVal == null) return;
             actualizarCamposPorTipo(newVal);
         });
+        chkVisto.selectedProperty().addListener((obs, old, loVi) -> {
+            txtPuntuacion.setDisable(!loVi);
+        });
     }
     @FXML private void guardar(){
         ResultadoValidacion res;
@@ -62,7 +64,7 @@ public class  AgregarController implements ISetService, ISetMain {
         String plataforma = txtPlataforma.getText();
         double duracion = 0;
         boolean loVi = chkVisto.isSelected();
-        double puntuacion;
+        double puntuacion = 0.0;
         String rewiew = txtRewiew.getText();
         String tipo = cmbTipo.getValue();
         String imgPath = null;
@@ -87,13 +89,17 @@ public class  AgregarController implements ISetService, ISetMain {
                 tintarMsj("Error al guardar la imagen.", TipoMsj.ERROR);
                 return;
             }
+        } else if (txtUrl.getText() != null && !txtUrl.getText().isBlank()){
+            imgPath = txtUrl.getText().trim();
         }
         try{
             anioPub = txtAnioPub.getValue();
             if(tipo.trim().toLowerCase().equals("pelicula")){
                 duracion = Double.parseDouble(txtDuracion.getText());
             }
-            puntuacion = Double.parseDouble(txtPuntuacion.getText());
+            if(loVi) {
+                puntuacion = Double.parseDouble(txtPuntuacion.getText());
+            }
             if(service.getModoFormulario() == ModoFormulario.EDITAR) {
                 res = service.editar(service.getSeleccionado(),titulo, genero, descripcion, anioPub, plataforma,
                         duracion, loVi, puntuacion, rewiew, tipo, tipoPel, imgPath);
@@ -158,6 +164,7 @@ public class  AgregarController implements ISetService, ISetMain {
         chkVisto.setSelected(a1.isLoVi());
         txtPuntuacion.setText(String.valueOf(a1.getPuntuacion()));
         txtRewiew.setText(a1.getRewiew());
+        txtUrl.setText(a1.getImgPath());
         String tipo = (a1 instanceof Serie) ? "serie" : "pelicula";
         cmbTipo.setValue(tipo);
         actualizarCamposPorTipo(tipo);

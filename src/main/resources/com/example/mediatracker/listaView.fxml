@@ -16,7 +16,7 @@
          -fx-text-fill: white; -fx-prompt-text-fill: #3d5a80;
          -fx-background-radius: 8; -fx-border-color: #1E90FF; -fx-border-radius: 8; -fx-border-width: 1;" />
     </HBox>
-    <Label fx:id="lblVacio" style="-fx-text-fill: #6fb0ff; -fx-font-size: 20;" text="No se encontro lo solicitado"
+    <Label fx:id="lblVacioBusqueda" style="-fx-text-fill: #6fb0ff; -fx-font-size: 20;" text="No se encontro lo solicitado"
            visible="false" />
     <ScrollPane fitToWidth="true" pannable="true" stylesheets="@nightwing.css">
         <FlowPane fx:id="contenedor" alignment="TOP_LEFT" hgap="12" prefWrapLength="500" vgap="12"

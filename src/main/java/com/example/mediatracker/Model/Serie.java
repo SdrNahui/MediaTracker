@@ -4,20 +4,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Serie extends AudioVisual {
-    private ArrayList<Temporada> temporadas;
-    private int totalCapitulos;
+    private final ArrayList<Temporada> temporadas;
 
-    protected Serie(){
-        this.tipo = "serie";
-    }
     public Serie(String titulo, String genero, String descripcion, LocalDate anioPub, String plataforma,
                  double duracion, boolean loVi, double puntuacion, String rewiew) {
         super(titulo, genero,descripcion, anioPub, plataforma, duracion, loVi, puntuacion, rewiew);
         this.temporadas = new ArrayList<>();
-        this.totalCapitulos = 0;
         this.tipo = "serie";
         this.imgPath = null;
-
     }
 
     @Override
@@ -50,10 +44,5 @@ public class Serie extends AudioVisual {
             ret &= t.estaCompletaTemp();
         }
         return ret;
-    }
-
-
-    public String getCantidadCapitulos() {
-        return String.valueOf(totalCapitulos);
     }
 }

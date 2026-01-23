@@ -1,42 +1,64 @@
 [
   {
-    "tipoPel": "ORIGINAL",
-    "titulo": "pacif rim",
-    "genero": "accion",
-    "tipo": "pelicula",
-    "descripcion": "pelea de kaijus\t",
-    "anioPub": "2026-01-13",
-    "plataforma": "neflix",
-    "duracion": 135.0,
-    "loVi": true,
-    "puntuacion": 5.9,
-    "rewiew": ""
-  },
-  {
     "temporadas": [
       {
         "numTemp": 1,
         "capitulos": [
           {
             "numCap": 1,
-            "tituloCap": "upisde down",
-            "descripcionCap": "wachin desaparedce",
+            "tituloCap": "Capítulo uno: La desaparición de Will Byers",
+            "descripcionCap": "Will es testigo de algo horroroso cunado regresa a casa. Cerca de ahí, un laboratorio gubernamental esconde un terrible secreto en sus profundidades.",
             "visto": true,
-            "duracionCap": 24.5
+            "duracionCap": 49.0
           },
           {
             "numCap": 2,
-            "tituloCap": "pan",
-            "descripcionCap": "sdj ",
+            "tituloCap": "Capítulo dos: La loca de la calle Maple",
+            "descripcionCap": "Lucas, Mike y Dustin intentan hablar con la niña que encontraron. Joyce, muy ansiosa, es interrogada por Hopper sobre una llamada telefónica.",
             "visto": true,
-            "duracionCap": 23.5
+            "duracionCap": 56.0
           },
           {
             "numCap": 3,
-            "tituloCap": "apo",
-            "descripcionCap": "sad",
+            "tituloCap": "Capítulo tres: Todo está bien",
+            "descripcionCap": "Nancy, cada vez más preocupada, busca a Barb y descubre lo que Jonathan está tramando. Joyce está segura de que Will intenta comunicarse con ella.",
             "visto": true,
-            "duracionCap": 48.9
+            "duracionCap": 52.0
+          },
+          {
+            "numCap": 4,
+            "tituloCap": "Capítulo cuatro: El cuerpo",
+            "descripcionCap": "Joyce se rehusa a aceptar que Will está muerto e intenta comunicarse con él, y los chicos ayudan a Once a cambiar de imagen. Nancy y Jonathan forman una alinaza.",
+            "visto": true,
+            "duracionCap": 51.0
+          },
+          {
+            "numCap": 5,
+            "tituloCap": "Capítulo cinco: La pulga y el acróbata",
+            "descripcionCap": "Hopper, entra al laboratorio. Nancy y Jonathan enfrentan a lo que se llevó a Will, y los chicos le preguntan al señor Clarke cómo viajar a otra dimensión.",
+            "visto": true,
+            "duracionCap": 53.0
+          },
+          {
+            "numCap": 6,
+            "tituloCap": "Capítulo seis: El monstruo",
+            "descripcionCap": "Jonathan busca a Nancy en la oscuridad y Steve hace lo mismo. Hopper y Joyce descubren la verdad sobre los experientos del laboratorio.",
+            "visto": true,
+            "duracionCap": 47.0
+          },
+          {
+            "numCap": 7,
+            "tituloCap": "Capítulo siete: La bañera",
+            "descripcionCap": "Once intenta llegar hasta Will, y Lucas advierte sobre algo terrible que se avecina. Nancy y Jonathan le muestran a la policía lo que captó con su cámara.",
+            "visto": true,
+            "duracionCap": 43.0
+          },
+          {
+            "numCap": 8,
+            "tituloCap": "Capítulo ocho: El otro lado",
+            "descripcionCap": "El doctor Brenner detiene a Hopper y Joyce para un interrogatorio. Los chicos esperan con Once en el gimansio, mientras Nancy y Jonathan se preparan para luchar.",
+            "visto": true,
+            "duracionCap": 55.0
           }
         ]
       },
@@ -45,17 +67,66 @@
         "capitulos": [
           {
             "numCap": 1,
-            "tituloCap": "man",
-            "descripcionCap": "pero",
+            "tituloCap": "Capítulo uno: MADMAX",
+            "descripcionCap": "A unos dias de Halloween, los chicos descubren que alguien superó su puntaje en las maquinitas, y Hopper investiga un suceso inusual en un huerto de calabazas.",
             "visto": true,
-            "duracionCap": 34.9
+            "duracionCap": 49.0
           },
           {
             "numCap": 2,
-            "tituloCap": "paz",
-            "descripcionCap": "asdj",
-            "visto": false,
-            "duracionCap": 34.5
+            "tituloCap": "Capítulo dos: Dulce o truco, bicho raro",
+            "descripcionCap": "Will ve algo terrible en la noche de Halloween. Por su lado, Mike no pierde la esperanza de que Once está cerca, y Nancy no supera lo que le sucedió a Barb.",
+            "visto": true,
+            "duracionCap": 56.0
+          },
+          {
+            "numCap": 3,
+            "tituloCap": "Capítulo tres: El renacuajo",
+            "descripcionCap": "Dustin adopta una mascota muy peculiar. Once se siente cada vez más impaciente con su situación, y Bob conversa con Will para ayudarlo a enfrentar sus miedos.",
+            "visto": true,
+            "duracionCap": 47.0
+          },
+          {
+            "numCap": 4,
+            "tituloCap": "Capítulo cuatro: Will, el sabio",
+            "descripcionCap": "La salud de Will empeora y Joyce se percata de la severidad del problema. Hopper intenta llegar hasta la raiz de la verdad, y Once se topa con algo inesperado.",
+            "visto": true,
+            "duracionCap": 47.0
+          },
+          {
+            "numCap": 5,
+            "tituloCap": "Capítulo cinco: Dig Dug",
+            "descripcionCap": "Nancy y Jonathan se acercan a un nuevo aliado que tiene su propia teoría sobre los eventos. Once indaga en su pasado, y Bob es clave en un momento crítico.",
+            "visto": true,
+            "duracionCap": 59.0
+          },
+          {
+            "numCap": 6,
+            "tituloCap": "Capítulo seis: El espía",
+            "descripcionCap": "El vínculo entre Will y el monstruo sombra se intensifica mientras todos se preguntan cómo detenerlo. En otro lado, Dustin y Steve forman una alianza inesperada.",
+            "visto": true,
+            "duracionCap": 52.0
+          },
+          {
+            "numCap": 7,
+            "tituloCap": "Capítulo siete: La hermana perdida",
+            "descripcionCap": "Tras una serie de visiones, Once se embarca en una búsqueda que termina lejos de Hawkins, donde conoce a un clan liderado por una chica con un triste pasado.",
+            "visto": true,
+            "duracionCap": 46.0
+          },
+          {
+            "numCap": 8,
+            "tituloCap": "Capítulo ocho: El azotamentes",
+            "descripcionCap": "La situación en el Laboratorio Hawkins activa un protocolo de seguridad donde nadie puede salir del lugar, hasta que alguien toma una heroica decisión.",
+            "visto": true,
+            "duracionCap": 48.0
+          },
+          {
+            "numCap": 9,
+            "tituloCap": "Capítulo nueve: El portal ",
+            "descripcionCap": "Once sabe que la solución está en sus manos y debe terminar lo que inició, mientras los demás ae arriesgan con un plan para sofocar a la sombra que posee a WIll.",
+            "visto": true,
+            "duracionCap": 63.0
           }
         ]
       },
@@ -64,45 +135,339 @@
         "capitulos": [
           {
             "numCap": 1,
-            "tituloCap": "asd",
-            "descripcionCap": "asd",
-            "visto": false,
-            "duracionCap": 48.9
+            "tituloCap": "Capítulo uno: ¿Me copias, Suzie?",
+            "descripcionCap": "El verano trae nuevos trabajos y romances, aunque es espíritu positivo cambia cuando la radio de Dustin capta una transmisión rusa, y Will percibe que algo anda mal.",
+            "visto": true,
+            "duracionCap": 51.0
+          },
+          {
+            "numCap": 2,
+            "tituloCap": "Capítulo dos: Ratas de centro comercial",
+            "descripcionCap": "Nancy y Jonathan siguen una pista, Steve y Robin se involucran en una misión secreta, y Max y Once van de compras. Billy tiene visiones pertubadoras.",
+            "visto": true,
+            "duracionCap": 51.0
+          },
+          {
+            "numCap": 3,
+            "tituloCap": "Capítulo tres: El caso de la guardavidas perdida",
+            "descripcionCap": "Mientras Once y Max buscan a Billy, Will declara un día sin chicas. Steve y Dustin van en una misión de vigilancia, y Joyce y Hopper regresan al Laboratorio Hawkins.",
+            "visto": true,
+            "duracionCap": 50.0
+          },
+          {
+            "numCap": 4,
+            "tituloCap": "Capítulo cuatro: La prueba del sauna",
+            "descripcionCap": "Una alerta de código rojo vuelve a poner a los chicos frente a un peligro conocido. Karen alienta a Nancy a seguir investigando, y Robin encuentra un mapa muy utíl.",
+            "visto": true,
+            "duracionCap": 53.0
+          },
+          {
+            "numCap": 5,
+            "tituloCap": "Capítulo cinco: Los desollados",
+            "descripcionCap": "Una serie de sorpresas extrañas acecha en una antigua granja y en lo más profundo de Starcourt. Por su parte, el Desuellamentes junta fuerzas.",
+            "visto": true,
+            "duracionCap": 52.0
+          },
+          {
+            "numCap": 6,
+            "tituloCap": "Capítulo seis: E pluribus unum",
+            "descripcionCap": "El Dr. Alexei revela el proyecto de los rusos, y Once ve dónde estuvo Billy. Dustin y Erica organizan un rescate arriesgado.",
+            "visto": true,
+            "duracionCap": 60.0
+          },
+          {
+            "numCap": 7,
+            "tituloCap": "Capítulo siete: La picadura",
+            "descripcionCap": "El tiempo se agota y un asesino se acerca. El equipo de Hopper regresa rápido a Hawkins, donde Once y los chicos se preparan para la guerra.",
+            "visto": true,
+            "duracionCap": 56.0
+          },
+          {
+            "numCap": 8,
+            "tituloCap": "Capítulo ocho: La batalla de Starcourt",
+            "descripcionCap": "El terror invade el centro comercial con la llegada del Desuellamentes. En el fondo, en lo más oscuro, está en riesgo el futuro del mundo.",
+            "visto": true,
+            "duracionCap": 78.0
+          }
+        ]
+      },
+      {
+        "numTemp": 4,
+        "capitulos": [
+          {
+            "numCap": 1,
+            "tituloCap": "Capítulo uno: El club",
+            "descripcionCap": "Ce sufre acoso escolar. Joyce recibe un paquete misterioso. Alguien agita la noche de Calabozos y Dragones. ",
+            "visto": true,
+            "duracionCap": 78.0
+          },
+          {
+            "numCap": 2,
+            "tituloCap": "Capítulo dos: La maldición de Vecna",
+            "descripcionCap": "Mientras Mike llega a California, un cadáver deja paralizado a Hawkins. Nancy busca pistas. Eddie, conmocionado, les cuenta a los demás lo que vio.",
+            "visto": true,
+            "duracionCap": 78.0
+          },
+          {
+            "numCap": 3,
+            "tituloCap": "Capítulo tres: ¿Monstruo o superheroína?",
+            "descripcionCap": "Joyce viaja a Alaska con Murray. Ce enfrenta graves consecuencias. Robin y Nacy descubren los secretos de los demonios de Hawkins. el Dr. Owens trae fuertes noticias.",
+            "visto": true,
+            "duracionCap": 65.0
+          },
+          {
+            "numCap": 4,
+            "tituloCap": "Capítulo cuatro: Querido Billy",
+            "descripcionCap": "Max está en grave peligro... y en una carrera contrarreloj. Un paciente del hospital psiquiátrico tiene visitas. Por otro lado, Hopper trabaja duro en Rusia.",
+            "visto": true,
+            "duracionCap": 79.0
+          },
+          {
+            "numCap": 5,
+            "tituloCap": "Capítulo cinco: Proyecto Nina",
+            "descripcionCap": "Owens lleva a Once a Nevada, donde la obligan a confrotar su pasado. Los chicos de Hawkins buscan pistas en una casa en ruinas. Vecna cobra otra víctima.",
+            "visto": true,
+            "duracionCap": 77.0
+          },
+          {
+            "numCap": 6,
+            "tituloCap": "Capítulo seis: En lo profundo",
+            "descripcionCap": "Detrás de la cortina de hierro, se pone en marcha una peligrosa misión de rescate. El equipo de California busca la ayuda de una hacker. Steve se arriesga por el grupo. ",
+            "visto": true,
+            "duracionCap": 65.0
+          },
+          {
+            "numCap": 7,
+            "tituloCap": "Capítulo siete: Masacre en el Laboratorio Hawkins",
+            "descripcionCap": "Hopper se prepara para luchar contra un monstruo. Dustin analiza los motivos de Vecna y descifra un mensaje del más allá. Once halla fuerza en un recuerdo lejano.",
+            "visto": true,
+            "duracionCap": 101.0
+          },
+          {
+            "numCap": 8,
+            "tituloCap": "Capítulo ocho: Papá",
+            "descripcionCap": "Nancy tiene visiones inquietantes, y Once supera una importante prueba. En Hawkins, la pandilla reúne suministros y se prepara para la batalla.",
+            "visto": true,
+            "duracionCap": 87.0
+          },
+          {
+            "numCap": 9,
+            "tituloCap": "Capítulo nueve: El húesped",
+            "descripcionCap": "Con la bondad y el metal como sus armas, nuestros héroes luchan desde cada esquina del campo de batalla para salvar a Hawkins... y al mundo entero.",
+            "visto": true,
+            "duracionCap": 142.0
+          }
+        ]
+      },
+      {
+        "numTemp": 5,
+        "capitulos": [
+          {
+            "numCap": 1,
+            "tituloCap": "Capítulo uno: La misión",
+            "descripcionCap": "Noviembre de 1987. El grupo evade al éjercito para entrar al Otro Lado y encontrar a Vecna. Pero lo que no saben es que la amenaza se encuentra más cerca de lo que creen.",
+            "visto": true,
+            "duracionCap": 71.0
+          },
+          {
+            "numCap": 2,
+            "tituloCap": "Capítulo dos: La desaparición de Holly Wheeler",
+            "descripcionCap": "Ante el brutal ataque ocurrido en casa de los Wheeler, Mike y Nancy empiezan a sentir el costo de su ocultamiento, y Once y Hopper emprenden una misión de rescate.",
+            "visto": true,
+            "duracionCap": 57.0
+          },
+          {
+            "numCap": 3,
+            "tituloCap": "Capítulo tres: La trampa de Turnbow",
+            "descripcionCap": "Will percibe el siguiente paso de Vecna, lo que le da al grupo la oportunidad de tenderle una trampa. Holly explora su nuevo entorno.",
+            "visto": true,
+            "duracionCap": 69.0
+          },
+          {
+            "numCap": 4,
+            "tituloCap": "Capítulo cuatro: El hechicero",
+            "descripcionCap": "El ejército arrecia su control sobre Hawkins. Mike, Lucas y Robin idean un arriesgado plan de escape. Once se encuentra cara a cara con su rival.",
+            "visto": true,
+            "duracionCap": 86.0
+          },
+          {
+            "numCap": 5,
+            "tituloCap": "Capítulo cinco: Electrochoque ",
+            "descripcionCap": "El grupo idea un plan electrizante para reconectar a Will con la menta colmena. Surgen tensiones durante la búsqueda del Laboratorio Hawkins en el Otro Lado.",
+            "visto": true,
+            "duracionCap": 68.0
+          },
+          {
+            "numCap": 6,
+            "tituloCap": "Capítulo seis: La huida de Camazotz",
+            "descripcionCap": "Mientras Holly y Max luchan por escapar de la mente de Vecna, Once debe hallar la forma de llegar a Will. Joyce lidia con la culpa. Jonathan y Nancy enfrentan un momento decisivo.",
+            "visto": true,
+            "duracionCap": 75.0
+          },
+          {
+            "numCap": 7,
+            "tituloCap": "Capítulo siete: El puente",
+            "descripcionCap": "En el aniversario de la desaparición de Will, el grupo se prepara para una batalla que podría cambiar el mundo.",
+            "visto": true,
+            "duracionCap": 66.0
+          },
+          {
+            "numCap": 8,
+            "tituloCap": "Capítulo ocho: Este lado",
+            "descripcionCap": "Mientras Vecna se prepara para destruir el mundo, el grupo deberá arriesgarlo todo para derrotarlo de una vez por todas.",
+            "visto": true,
+            "duracionCap": 128.0
           }
         ]
       }
     ],
-    "totalCapitulos": 0,
     "titulo": "Stranger Things",
-    "genero": "teshor",
+    "genero": "Drama, Sci-fi, Terror",
     "tipo": "serie",
-    "descripcion": "desaparicion\t",
-    "anioPub": "2026-01-10",
-    "plataforma": "neflut",
+    "descripcion": "Will es testigo de algo horroroso cuando regresa a casa. Cerca de ahí, un laboratorio gubernamental esconde un terrible secreto en sus profundidades.",
+    "anioPub": "2016-07-16",
+    "plataforma": "Netflix",
     "duracion": 0.0,
     "loVi": true,
     "puntuacion": 8.9,
     "rewiew": "",
-    "imgPath": "Media_1768937475440.jpg"
+    "imgPath": "https://image.tmdb.org/t/p/original/8GEpV2uY13c77TG2yaz1zSVnOO2.jpg"
   },
   {
     "temporadas": [
       {
         "numTemp": 1,
-        "capitulos": []
+        "capitulos": [
+          {
+            "numCap": 1,
+            "tituloCap": "Un glorioso propósito",
+            "descripcionCap": "Tras robar el Teseracto en \"Avengers: Endgame\", Loki cae ante la Autoridad de Variación Temporal.",
+            "visto": true,
+            "duracionCap": 53.0
+          },
+          {
+            "numCap": 2,
+            "tituloCap": "La variante",
+            "descripcionCap": "Mobius pone a trabajar a Loki, y no todos en la ATV están contentos con el Dios de las Mentiras.",
+            "visto": true,
+            "duracionCap": 56.0
+          },
+          {
+            "numCap": 3,
+            "tituloCap": "Lamentis",
+            "descripcionCap": "Loki descubre el plan de la variante y saca un as de la manga que podría cambiar todo para siempre.",
+            "visto": true,
+            "duracionCap": 44.0
+          },
+          {
+            "numCap": 4,
+            "tituloCap": "El evento nexus",
+            "descripcionCap": "La tensión y la paranoia se apoderan de la AVT mientras Mobius y B-15 buscan a Loki y Sylvie.",
+            "visto": true,
+            "duracionCap": 50.0
+          },
+          {
+            "numCap": 5,
+            "tituloCap": "Un viaje hacia el misterio",
+            "descripcionCap": "Loki trata de escapar de un purgatorio desolado donde se cruza con otras variantes de sí mismo.",
+            "visto": true,
+            "duracionCap": 51.0
+          },
+          {
+            "numCap": 6,
+            "tituloCap": "Eternamente. Siempre.",
+            "descripcionCap": "En el final de temporada, Loki y Sylvie tienen una cita con el destino, y el tiempo se acaba.",
+            "visto": true,
+            "duracionCap": 48.0
+          }
+        ]
+      },
+      {
+        "numTemp": 2,
+        "capitulos": [
+          {
+            "numCap": 1,
+            "tituloCap": "Uroboros",
+            "descripcionCap": "Loki se pierde en el tiempo y se dividido, literalmente, entre pasado, presente y futuro.",
+            "visto": false,
+            "duracionCap": 48.0
+          },
+          {
+            "numCap": 2,
+            "tituloCap": "Quebrando a Brad",
+            "descripcionCap": "Con la AVT a punto de un colapso temporal, Loki y Mobius no se detendrán hasta hallar a Sylvie. ",
+            "visto": false,
+            "duracionCap": 52.0
+          },
+          {
+            "numCap": 3,
+            "tituloCap": "1893",
+            "descripcionCap": "Loki y Mobius buscan al reloj de caricatura favorito de todos mientras tratan de salvar la AVT.",
+            "visto": false,
+            "duracionCap": 56.0
+          },
+          {
+            "numCap": 4,
+            "tituloCap": "El corazón de la AVT",
+            "descripcionCap": "El Telar se acerca al desastre; loki, Mobius y Sylvie hallan a una variante de Aquel que Permanece.",
+            "visto": false,
+            "duracionCap": 51.0
+          },
+          {
+            "numCap": 5,
+            "tituloCap": "Ciencia/Ficción",
+            "descripcionCap": "Loki cruza líneas del tiempo agonizantes en busca de sus amigos; la realidad no es lo que parece.",
+            "visto": false,
+            "duracionCap": 47.0
+          },
+          {
+            "numCap": 6,
+            "tituloCap": "Un glorioso propósito",
+            "descripcionCap": "Loki aprende qué es un verdadero \"glorioso propósito\" y rectifica el pasado en este insólito final.",
+            "visto": false,
+            "duracionCap": 59.0
+          }
+        ]
       }
     ],
-    "totalCapitulos": 0,
-    "titulo": "la reina batata",
-    "genero": "asdsfa",
+    "titulo": "Loki",
+    "genero": "Superheroes, Acción, Aventura",
     "tipo": "serie",
-    "descripcion": "asfaf",
-    "anioPub": "2026-01-27",
-    "plataforma": "nelfi",
+    "descripcion": "El volátil villano Loki retoma su papel como el Dios de las Mentiras.",
+    "anioPub": "2021-06-09",
+    "plataforma": "Disney+",
     "duracion": 0.0,
-    "loVi": true,
-    "puntuacion": 6.7,
+    "loVi": false,
+    "puntuacion": 0.0,
     "rewiew": "",
-    "imgPath": "Media_1768939913314.jpg"
+    "imgPath": "Media_1769111668479.jpg"
+  },
+  {
+    "tipoPel": "ORIGINAL",
+    "titulo": "Los Vengadores",
+    "genero": "Acción, Superheroes, Aventura",
+    "tipo": "pelicula",
+    "descripcion": "Nick Fury recluta a un equipo de héroes para luchar contra un enemigo inesperado.",
+    "anioPub": "2012-04-26",
+    "plataforma": "Disney+",
+    "duracion": 143.8,
+    "loVi": true,
+    "puntuacion": 7.8,
+    "rewiew": "",
+    "imgPath": "https://image.tmdb.org/t/p/original/ugX4WZJO3jEvTOerctAWJLinujo.jpg"
+  },
+  {
+    "tipoPel": "ORIGINAL",
+    "titulo": "Sinners",
+    "genero": "Terror, acción, Suspenso",
+    "tipo": "pelicula",
+    "descripcion": "Dos hermanos gemelos regresan a su ciudad natal para comenzar de nuevo, pero allí descubren que un gran mal espera al acecho para recibirlos.",
+    "anioPub": "2025-04-17",
+    "plataforma": "Hbo Max",
+    "duracion": 138.0,
+    "loVi": false,
+    "puntuacion": 0.0,
+    "rewiew": "",
+    "imgPath": "Media_1769112811053.jpg"
   }
 ]

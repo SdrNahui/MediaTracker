@@ -1,7 +1,6 @@
 package com.example.mediatracker.Repository;
 
 import com.google.gson.*;
-
 import java.lang.reflect.Type;
 import java.time.LocalDate;
 
@@ -16,6 +15,4 @@ public class LocalDateAdapter implements JsonSerializer<LocalDate>, JsonDeserial
             throws JsonParseException {
         return LocalDate.parse(jsonElement.getAsString());
     }
-
-
 }

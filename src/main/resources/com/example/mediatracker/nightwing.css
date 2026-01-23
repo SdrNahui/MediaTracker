@@ -2,7 +2,7 @@
     -fx-background-color: #111b29;
 }
 
-/* ===== ScrollPane ===== */
+/*ScrollPane*/
 .scroll-pane {
     -fx-background: #111b29;
     -fx-background-color: #111b29;
@@ -12,7 +12,7 @@
     -fx-background-color: #111b29;
 }
 
-/* ===== Barra de scroll ===== */
+/*Barra de scroll*/
 .scroll-bar {
     -fx-background-color: #111b29;
 }
@@ -26,7 +26,7 @@
     -fx-background-color: #4fa3ff; /* Turquesa suave */
 }
 
-/* ===== Cards ===== */
+/*Cards*/
 .card {
     -fx-background-color: #0d2d63;
     -fx-background-radius: 12;
