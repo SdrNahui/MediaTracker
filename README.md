@@ -91,8 +91,8 @@ Este proyecto está pensado para ejecutarse en un entorno de desarrollo (IDE).
 - IDE compatible con JavaFX (IntelliJ IDEA recomendado)
 
 ### Dependencias
-- JavaFX 21.0.6
-- Gson 2.11.0
+- JavaFX 21.0.6 (Maven)
+- Gson 2.11.0 (Maven)
 
 ### Pasos
 1. Clonar el repositorio
